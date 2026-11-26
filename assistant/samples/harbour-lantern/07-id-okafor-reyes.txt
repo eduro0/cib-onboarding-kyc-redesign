@@ -1,0 +1,4 @@
+DOCUMENT: Passport bio page (copy)
+NAME: Daniel OKAFOR-REYES
+NATIONALITY: Singapore
+DATE OF EXPIRY: 2031-02-11

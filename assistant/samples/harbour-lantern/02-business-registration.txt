@@ -1,0 +1,8 @@
+DOCUMENT: Business Registration Certificate
+DATE: 2026-03-14
+VALID UNTIL: 2027-03-13
+
+Business name: HARBOUR LANTERN TRADING LIMITED
+Business registration number: 70912334
+Business address: Unit 1203, 88 Lantern Quay Road, Kwun Tong, Kowloon, Hong Kong
+Nature of business: Wholesale of electronic components

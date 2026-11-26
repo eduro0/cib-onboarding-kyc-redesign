@@ -1,0 +1,17 @@
+{
+  "note": "Fictional bank record, made up for this demo.",
+  "entity": {"name": "Quiet Pine Instruments Limited", "registration_number": "2455390", "jurisdiction": "Hong Kong",
+             "registered_address": "8/F, 3 Pine Hill Street, Sheung Wan, Hong Kong"},
+  "directors": ["HO Mei-ling", "Tomas BERG"],
+  "ownership": [{"owner": "HO Mei-ling", "owner_type": "person", "owned": "Quiet Pine Instruments Limited", "percent": 55},
+                {"owner": "Tomas BERG", "owner_type": "person", "owned": "Quiet Pine Instruments Limited", "percent": 45}],
+  "risk_rating": "low",
+  "last_review": "2023-11-20",
+  "documents_on_file": [{"type": "certificate_of_incorporation", "date": "2012-05-02"},
+                        {"type": "articles_of_association", "date": "2012-05-02"},
+                        {"type": "significant_controllers_register", "date": "2023-10-11"},
+                        {"type": "id_document", "subject": "HO Mei-ling", "date": "2021-03-30"},
+                        {"type": "id_document", "subject": "Tomas BERG", "date": "2022-06-14"},
+                        {"type": "proof_of_address", "subject": "HO Mei-ling", "date": "2023-10-02"},
+                        {"type": "proof_of_address", "subject": "Tomas BERG", "date": "2023-09-18"}]
+}

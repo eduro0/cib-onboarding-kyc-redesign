@@ -1,0 +1,62 @@
+# Implements: kpi-model/assumptions-justified
+# Why each input in model/assumptions.yaml has the value it has. One entry per run setting, per shared share, and
+# per step or gateway on each map (keyed by its id in model/as-is.yaml or model/to-be.yaml); the entry covers every
+# assumption that step uses (touch, wait, p). "src" lists sources/ keys that anchor the reasoning; an entry without
+# them is a judgment, said as such. The values themselves are read from assumptions.yaml when the document is built,
+# so the text below never restates them.
+
+run:
+  seed: {title: "Random seed", why: "Any fixed number would do. It makes every run draw the same simulated cases, so a figure can be remade exactly and a change to an input shows its effect alone."}
+  onboarding_cases: {title: "New corporate clients per year", why: "A judgment for one corporate and investment banking branch. It sets the scale of the yearly staff hours only: cycle time, touch time, first-pass rate and client touches are averages per case and do not depend on it."}
+  review_cases: {title: "Periodic reviews per year", why: "Review volume follows from the size of the client book and the review cycle. Market practice is a one-, three- or five-year cycle by risk tier, so a branch reviews a sizeable share of its book every year, and its yearly reviews outnumber its new clients. Like the onboarding volume, it changes the yearly hours, not the per-case figures.", src: [ey-kyc-refresh-2024]}
+  review_lead_days: {title: "Review lead time", why: "A review has to start well before its due date because the client needs weeks to send documents. The lead time sets the on-time measure: a review is on time if it ends within it. Published refresh times run from weeks to months, and this lead sits within that range.", src: [thomson-reuters-kyc-2017-globaltreasurer, fenergo-kyc-trends-2023-global]}
+  fte_hours: {title: "Productive hours in a full-time year", why: "A full-time year has more paid hours than productive ones: leave, public holidays, training and meetings come off. A US federal costing convention sets productive hours somewhat above the model's figure, so with it the full-time staff freed would be slightly fewer. Only used to express hours saved as full-time staff.", src: [omb-a76-2003]}
+  wait_spread: {title: "Spread of waiting times", why: "Queue times are skewed: most cases wait about the typical time, a few wait much longer. A triangular spread from half to double the typical wait gives that long tail, which is what the 90th-percentile and over-60-days figures measure."}
+  touch_spread: {title: "Spread of hands-on times", why: "Hands-on work varies less than waiting: an analyst's time on a step is bounded by the work itself. The spread is narrower and still skewed upward, for complex structures."}
+
+shared:
+  high_risk.p: {title: "Share of cases sent to enhanced due diligence", why: "Applies to both maps, so it does not drive the gain. Corporate clients in a CIB book include more complex structures and cross-border owners than retail, so a minority but not a trivial share goes to enhanced due diligence. The same value is used for onboarding and review cases."}
+  edd_decline.p: {title: "Share of enhanced cases declined or exited", why: "Applies to both maps. Most enhanced reviews end with approval and conditions rather than exit; a small share is declined. It only removes cases from the averages."}
+
+as_is:
+  prep_review: {why: "Reviews only. Today each review starts from scratch: an analyst pulls the file and lists by hand what is out of date (pain point P7)."}
+  request_docs: {why: "The relationship manager sends a generic checklist and explains it (pain point P1). The work is short; the elapsed time is the RM's diary. Corporates report many more contacts per onboarding than banks think they make, which suggests the first request rarely settles it.", src: [thomson-reuters-kyc-2017-globaltreasurer, thomson-reuters-kyc-2016]}
+  send_docs: {why: "Client time, not bank time: gathering board minutes, registers and IDs against a list that does not say what applies to them. It is the largest wait on the map and the one the bank controls least."}
+  check_pack: {why: "An analyst checks each document for completeness and currency. Mostly queue time: the pack waits for an analyst."}
+  gw_complete: {why: "A high share of packs fail the completeness check each time, so most cases are chased at least once and some several times (pain point P2). This is the input the first-pass rate depends on most; corporates report several contacts per onboarding.", src: [thomson-reuters-kyc-2016]}
+  chase: {why: "The RM writes to the client again listing what is missing, and the client's clock restarts at 'send documents'."}
+  key_data: {why: "The same data is typed into the KYC system and core systems by hand (pain point P3). The time covers several systems and their checks. Bank staff surveyed put about a quarter of the onboarding process down to manual tasks.", src: [gleif-kyc-onboarding-2018]}
+  ubo: {why: "Tracing ownership layer by layer through company registries, often in more than one country (pain point P4). The largest single block of analyst time in the file build. It sits above the US regulator's burden estimate for beneficial-ownership checks, which assumes the client certifies its own owners, and in line with the couple of hours a PwC study reports for discovering ownership by hand.", src: [fincen-bo-pra-renewal-2024, pwc-sg-pkyc-2022]}
+  screen: {why: "Machine screening against sanctions, PEP and adverse-media lists; the day is batch and queue time. No staff time is counted, because the work is in clearing the hits."}
+  clear_hits: {why: "Name screening produces mostly false-positive hits, each cleared by hand with notes (pain point P5). One bank in Hong Kong had hundreds of analysts on name-screening cases. The time covers a corporate with directors, owners and related parties, and is below the screening effort a PwC study measured for a corporate review, so it is on the low side.", src: [hkma-regtech-case-studies-2021, pwc-sg-pkyc-2022]}
+  rate: {why: "The analyst applies the risk-rating methodology; short work once the file is built."}
+  edd: {why: "Enhanced due diligence: source of wealth and funds, adverse-media research and a written memo, then a compliance decision. The longest hands-on step and a long compliance queue, but only for the high-risk share."}
+  qc: {why: "A second analyst checks the finished file against the procedure before sign-off. Defects surface here, at the end (pain point P6). PwC measured far more time on this four-eye review in a corporate review than the model uses, so the As-Is is deliberately light here.", src: [pwc-sg-pkyc-2022]}
+  gw_qc: {why: "A large share of files go back from QC at each check. Late defects are common when a file is built by hand across several systems; this input and the completeness check together set the first-pass rate."}
+  fix_file: {why: "Fixing a QC defect often means going back to the client, hence a long wait."}
+  approve: {why: "Onboarding only. The business signs off the relationship; short work, a few days of diary time."}
+  open_accounts: {why: "Onboarding only. Account set-up in core systems, outside KYC, and the same on both maps."}
+  update_file: {why: "Reviews only. Record the outcome and set the next review date."}
+
+to_be:
+  prefill: {why: "Machine time: the assistant fills what the registries and the existing file already hold and lists only what is missing. No staff time, because the analyst's time is counted at the approval that follows."}
+  approve_request: {why: "Human approval gate. The analyst reads and edits a drafted request instead of writing one."}
+  gw_ask: {why: "Every onboarding needs documents from the client. Many reviews need nothing, because the registries and the file show no change; the analyst confirms that rather than the client re-sending everything. The review share is the To-Be input that moves review cycle time most."}
+  upload: {why: "Still the client's own time, but against a tailored list and a single upload, so somewhat shorter than today. Kept close to today on purpose: the redesign does not assume clients become fast."}
+  read_pack: {why: "Machine time: the assistant extracts data and ownership with the source words for each fact."}
+  review_draft: {why: "Human approval gate. Replaces three As-Is steps (check the pack, re-key the data, trace the owners): the analyst checks a draft with its sources instead of building the file. The gap between this and the three steps it replaces is the main touch-time saving and an assumption to test in a pilot. It falls within the effort savings PwC reports for redesigned periodic reviews, near their low end.", src: [pwc-sg-pkyc-2022]}
+  gw_complete: {why: "The tailored list leaves fewer gaps, but AI misses and client errors still send some packs back, so the share falls but not to zero. At most one follow-up, with every missing item at once."}
+  screen: {why: "Unchanged from today: the same screening engine."}
+  triage: {why: "Machine time: the assistant ranks hits and explains each possible match."}
+  decide_hits: {why: "Human approval gate. The analyst still decides every hit, with the explanation in front of them, so the time falls only modestly. The cut is in line with a Hong Kong bank whose machine-learning screening tool reduced manual alert reviews by about a third, and up to a half in some markets.", src: [hkma-regtech-case-studies-2021]}
+  rate: {why: "Rules propose the rating instantly from the file."}
+  confirm_rating: {why: "Human approval gate. The analyst confirms or overrides the proposed rating."}
+  edd_memo: {why: "Machine time: the assistant drafts the EDD memo with sources."}
+  edd_approve: {why: "Human approval gate. Compliance reviews a drafted memo instead of writing one; the decision and its accountability stay with compliance, so the saving is kept modest."}
+  preqc: {why: "Machine time: the file checks QC applies run before a person sees the file."}
+  qc_signoff: {why: "Human approval gate. QC signs off a file whose routine defects were already caught."}
+  gw_qc: {why: "Pre-QC catches routine defects, so fewer files go back. Judgment calls still fail QC."}
+  fix_file: {why: "Defects arrive listed by pre-QC and QC, so fixing them is quicker and needs the client less often."}
+  approve: {why: "Unchanged from today: the business sign-off is a human decision the redesign keeps."}
+  open_accounts: {why: "Unchanged: the redesign does not touch account set-up."}
+  update_file: {why: "Recording the outcome is partly drafted, so it takes less time."}

@@ -1,0 +1,35 @@
+{
+  "fixture": "Written by hand to the prompt's schema to stand in for a model reply, so the demo runs with no key. Record a real one with --live --record.",
+  "reply": {
+    "entity": {
+      "name": {"value": "Harbour Lantern Trading Limited", "doc": "01-certificate-of-incorporation.txt", "quote": "HARBOUR LANTERN TRADING LIMITED is this day incorporated in Hong Kong"},
+      "registration_number": {"value": "2810447", "doc": "01-certificate-of-incorporation.txt", "quote": "Company number: 2810447"},
+      "jurisdiction": {"value": "Hong Kong", "doc": "01-certificate-of-incorporation.txt", "quote": "incorporated in Hong Kong"},
+      "registered_address": {"value": "Unit 1203, 88 Lantern Quay Road, Kwun Tong, Kowloon, Hong Kong", "doc": "02-business-registration.txt", "quote": "Unit 1203, 88 Lantern Quay Road, Kwun Tong, Kowloon, Hong Kong"},
+      "incorporation_date": {"value": "2019-03-14", "doc": "01-certificate-of-incorporation.txt", "quote": "DATE: 2019-03-14"}
+    },
+    "director_mentions": [
+      {"name": "CHAN Wing-yee", "doc": "03-register-of-directors.txt", "quote": "CHAN Wing-yee, appointed 2019-03-14"},
+      {"name": "Daniel OKAFOR-REYES", "doc": "03-register-of-directors.txt", "quote": "Daniel OKAFOR-REYES, appointed 2021-06-01"},
+      {"name": "CHAN Wing-yee", "doc": "04-annual-return-extract.txt", "quote": "- CHAN Wing-yee"},
+      {"name": "Daniel OKAFOR-REYES", "doc": "04-annual-return-extract.txt", "quote": "- Daniel OKAFOR-REYES"},
+      {"name": "LIM Siew Ling", "doc": "04-annual-return-extract.txt", "quote": "LIM Siew Ling (appointed 2025-11-20)"}
+    ],
+    "ownership": [
+      {"owner": "Lantern Holdings Pte. Ltd.", "owner_type": "company", "owned": "Harbour Lantern Trading Limited", "percent": 60, "doc": "04-annual-return-extract.txt", "quote": "Lantern Holdings Pte. Ltd. (Singapore), 6,000 ordinary shares (60%)"},
+      {"owner": "CHAN Wing-yee", "owner_type": "person", "owned": "Harbour Lantern Trading Limited", "percent": 40, "doc": "04-annual-return-extract.txt", "quote": "CHAN Wing-yee, 4,000 ordinary shares (40%)"},
+      {"owner": "Daniel OKAFOR-REYES", "owner_type": "person", "owned": "Lantern Holdings Pte. Ltd.", "percent": 50, "doc": "05-lantern-holdings-shareholders.txt", "quote": "Daniel OKAFOR-REYES, 50,000 ordinary shares (50%)"},
+      {"owner": "Priya RAMANATHAN", "owner_type": "person", "owned": "Lantern Holdings Pte. Ltd.", "percent": 50, "doc": "05-lantern-holdings-shareholders.txt", "quote": "Priya RAMANATHAN, 50,000 ordinary shares (50%)"}
+    ],
+    "documents": [
+      {"file": "01-certificate-of-incorporation.txt", "type": "certificate_of_incorporation", "subject": "Harbour Lantern Trading Limited", "date": "2019-03-14", "expiry": null},
+      {"file": "02-business-registration.txt", "type": "business_registration", "subject": "Harbour Lantern Trading Limited", "date": "2026-03-14", "expiry": "2027-03-13"},
+      {"file": "03-register-of-directors.txt", "type": "register_of_directors", "subject": "Harbour Lantern Trading Limited", "date": "2026-09-30", "expiry": null},
+      {"file": "04-annual-return-extract.txt", "type": "annual_return", "subject": "Harbour Lantern Trading Limited", "date": "2026-04-02", "expiry": null},
+      {"file": "05-lantern-holdings-shareholders.txt", "type": "register_of_members", "subject": "Lantern Holdings Pte. Ltd.", "date": "2026-08-15", "expiry": null},
+      {"file": "06-proof-of-address-chan.txt", "type": "proof_of_address", "subject": "CHAN Wing-yee", "date": "2026-10-05", "expiry": null},
+      {"file": "07-id-okafor-reyes.txt", "type": "id_document", "subject": "Daniel OKAFOR-REYES", "date": null, "expiry": "2031-02-11"},
+      {"file": "08-id-chan.txt", "type": "id_document", "subject": "CHAN Wing-yee", "date": "2018-07-09", "expiry": null}
+    ]
+  }
+}

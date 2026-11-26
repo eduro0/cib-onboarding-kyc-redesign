@@ -1,0 +1,278 @@
+# Public sources: benchmarks. Researched 2026-11-18; every quote checked against the downloaded page or PDF.
+- key: ey-kyc-refresh-2024
+  title: 'Reassessing know your customer refresh: building an effective risk-based program'
+  publisher: EY
+  url: https://www.ey.com/content/dam/ey-unified-site/ey-com/en-us/insights/financial-services/documents/ey-reassessing-know-your-customer-refresh-building-an-effective-risk-based-program.pdf
+  date_published: 2024-10 (PDF creation date; cites sources accessed Sept 2024)
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: consultancy thought-leadership paper
+  quotes:
+  - text: Refresh strategies span the continuum between traditional one-, three- and five-year year periodic review
+      cadences and event-driven, trigger-based models.
+    locator: p.1
+    supports: The typical industry review cycle is 1, 3 and 5 years by risk tier, with trigger-based models as an
+      alternative. (The doubled 'year year' is in the original.)
+  - text: While there is still no international consensus on minimum requirements for a KYC refresh, US regulators
+      have been deliberately non-prescriptive
+    locator: p.2, point 3 'Global consensus'
+    supports: No international standard fixes review cycles for medium and low risk.
+  caveats: Consultancy view, US focus; not a regulator source. Use only for the market-practice 1/3/5-year convention.
+- key: fenergo-kyc-trends-2023-global
+  title: 'Fenergo KYC Trends Report: US Investment Banks Navigate Intensified Regulatory Reform, Struggle to Match
+    Compliance Staffing for Robust KYC'
+  publisher: Fenergo
+  url: https://www.fenergo.com/newsroom/fenergo-kyc-trends-report-us-investment-banks-navigate-intensified-regulatory-reform
+  date_published: '2023-11-15'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: KYC reviews for onboarding and maintenance now take a mean of 82 days to execute for each client, down
+      from 117 days (circa four months) a year ago.
+    locator: US investment banks section
+    supports: US investment banks reported a mean of 82 days per KYC review in 2023.
+  - text: the average cost of carrying out a single KYC review has increased by 17% since 2022 to $2,598.
+    locator: '''KYC from a global lens'' section'
+    supports: Global average cost per KYC review was USD 2,598 in 2023 (a cost-per-review anchor).
+  - text: Fenergo commissioned Censuswide to survey 1,164 Chief Operations Officers, Chief Compliance Officers,
+      Chief Risk Officers, and Chief Information Officers in global investment banks across the US, UK, Australia,
+      Singapore, Germany, and Japan.
+    locator: Methodology
+    supports: Sample is 1,164 executives in six markets, including Singapore but not Hong Kong.
+  caveats: Vendor survey (Fenergo sells KYC/CLM software); self-reported executive estimates; no HK sample. Methodology
+    states 'between October and September 2023' (sic).
+- key: fenergo-commercial-banking-us-2024
+  title: Commercial banks tackle an evolving KYC landscape and streamlining operational risks, revealing technology
+    automation gaps
+  publisher: Fenergo
+  url: https://resources.fenergo.com/thought-leadership/commercial-banks-tackle-an-evolving-kyc-landscape-and-streamlining-operational-risks-revealing-technology-automation-gaps
+  date_published: '2024-06-26'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: over a quarter (28%) of respondents indicating a duration of 121-150 days for medium-risk client reviews,
+      and 16% reporting a longer period of up to 210 days.
+    locator: body
+    supports: Medium-risk periodic reviews can take 4-5 months at US mid-market commercial banks.
+  - text: half (50%) of respondents reported losing clients due to slow and inefficient onboarding processes
+    locator: '''Navigating client expectations'' section'
+    supports: Half of surveyed US commercial banks lost clients to slow onboarding.
+  caveats: Vendor survey; US mid-market commercial banks (USD 10-100bn assets); sample size not stated on the page.
+- key: fenergo-kyc-trends-2024-global
+  title: Share of Banks Losing Clients to Poor KYC Practices Surges to Record High
+  publisher: Fenergo
+  url: https://resources.fenergo.com/newsroom/share-of-banks-losing-clients-to-poor-kyc-practices-surges-to-record-high
+  date_published: '2024-10-22'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: A global study of over 450 C-level executives across corporate, institutional and commercial banks found
+      that more than two-thirds (67%) have lost clients due to slow and inefficient client onboarding and KYC, up
+      19% from 2023.
+    locator: para 1
+    supports: 67% of surveyed banks lost clients to slow onboarding in 2024 (a client-abandonment anchor).
+  - text: Those based in Singapore have been hit hardest by the trend, with 87% of banks reporting lost clients
+    locator: para 1
+    supports: Singapore was the worst-affected market in the 2024 sample.
+  - text: the annual cost for performing KYC reviews at a corporate and institutional bank* is estimated to be $60
+      million
+    locator: para 2
+    supports: Estimated annual KYC review cost at a corporate and institutional bank is USD 60m.
+  - text: The survey also revealed that only 4% of banks have successfully automated the majority of their KYC workflows.
+    locator: body
+    supports: Few banks have automated most KYC work, leaving headroom for redesign.
+  caveats: Vendor survey; self-reported; the asterisk definition for bank type was not captured; no HK breakdown.
+- key: fenergo-singapore-2025
+  title: Singapore banks grapple with client exodus amid record high KYC failures
+  publisher: Fenergo
+  url: https://www.fenergo.com/newsroom/singapore-banks-grapple-with-client-exodus-amid-record-high-kyc-failures
+  date_published: 2025-02-05 (release datelined 6 February 2025)
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: A global study of over 150 C-level executives across corporate, institutional, and commercial banks in
+      2024 in Singapore revealed that nearly 90% have lost clients over the past year due to delays and inefficiencies
+      in onboarding
+    locator: para 1
+    supports: In the Singapore sample about 90% of banks lost clients to onboarding delays.
+  - text: While only 1% of banks surveyed have successfully automated the majority of their KYC and onboarding workflows
+    locator: body
+    supports: Automation of KYC in Singapore banks is very low.
+  caveats: Vendor survey, Singapore subsample (~150) of the 2024 study; the '87%' in the Oct 2024 release and '~90%'
+    here are from the same wave, reported differently.
+- key: fenergo-fincrime-trends-2025
+  title: Global Financial Institutions Struggle with Rising Client Losses and Compliance Costs as AI Adoption Increases
+  publisher: Fenergo
+  url: https://resources.fenergo.com/thought-leadership/global-financial-institutions-struggle-with-rising-client-losses-and-compliance-costs-as-ai-adoption-increases-fenergo
+  date_published: '2025-10-07'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: A global survey of 600 senior decision-makers across banks, asset managers and fund administrators found
+      that 70% of firms lost clients in the past year due to inefficient onboarding, up from 67% in 2024 and 48%
+      in 2023.
+    locator: para 1
+    supports: The client-loss trend rose from 48% (2023) to 67% (2024) to 70% (2025).
+  - text: Client onboarding abandonment rates now average around 10%.
+    locator: para 1
+    supports: About 10% of onboarding applications are abandoned (an abandonment-rate anchor).
+  - text: UK corporate banks report the slowest times, averaging more than six weeks, while Singaporean institutions
+      are fastest
+    locator: Onboarding performance paragraph
+    supports: Corporate onboarding averages over six weeks in the UK, faster in Singapore.
+  - text: automation of periodic KYC reviews averaging roughly a third across respondents.
+    locator: Technology adoption paragraph
+    supports: About one-third of periodic-review work is automated, so most is still manual.
+  caveats: Vendor survey; UK, US and Singapore only; includes non-banks; survey Aug 2025; HK not covered.
+- key: thomson-reuters-kyc-2016
+  title: Thomson Reuters 2016 Know Your Customer Surveys Reveal Escalating Costs and Complexity
+  publisher: Thomson Reuters
+  url: https://www.thomsonreuters.com/en/press-releases/2016/may/thomson-reuters-2016-know-your-customer-surveys.html
+  date_published: 2016-05
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: 30 percent of corporate respondents reported that times to on-board are more than two months and of which
+      10 percent claim an on-boarding time in excess of four months
+    locator: body
+    supports: About 30% of corporates reported onboarding over two months (old but widely cited).
+  - text: they have, on average, eight different bank interactions with the bank during the process.
+    locator: body
+    supports: Corporates reported eight interactions per onboarding (a client-touches anchor).
+  - text: a parallel survey of their corporate customers found that 89 percent had not had a good KYC experience,
+      and 13 percent had changed their financial institution relationship as a result.
+    locator: para 1
+    supports: 13% of corporates had switched bank because of KYC (2016).
+  caveats: Vendor survey (Thomson Reuters sells KYC services); nearly 800 FIs plus a corporate sample of unstated
+    size; global; 2016 data, so use only as a historical anchor.
+- key: thomson-reuters-kyc-2017-globaltreasurer
+  title: 'KYC pain: financial institutions and their clients still struggling with ongoing challenges'
+  publisher: The Global Treasurer (reporting Thomson Reuters 2017 KYC survey)
+  url: https://www.theglobaltreasurer.com/2017/11/02/kyc-pain-financial-institutions-and-their-clients-still-struggling-with-ongoing-challenges/
+  date_published: '2017-11-02'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  doc_type: trade-press article summarising a vendor survey
+  quotes:
+  - text: Onboarding times remain lengthy, with banks reporting longer average times (30 days) than investment managers
+      (23 days).
+    locator: '''Time to onboard'' section'
+    supports: Banks reported 30 days average onboarding in 2017 (FI view).
+  - text: The time associated with refreshing client records is also excessive – the global average is 20 days (unchanged
+      from last year).
+    locator: '''Ongoing monitoring'' section'
+    supports: A client-record refresh (periodic review) took about 20 days on average (2017).
+  - text: Whilst FIs say that they contact their clients on average 4 times during the onboarding process, more
+      excessive contact is reported by corporates across the board.
+    locator: '''Excessive contact'' section'
+    supports: FIs report 4 contacts while corporates report 8, a gap in how the two sides see client touches.
+  - text: 12% reporting that they had changed banks as a result of KYC issues.
+    locator: corporate section
+    supports: 12% of corporates had switched bank because of KYC (2017).
+  caveats: Secondary source; the original 2017 TR release was not fetched; 2017 data; vendor survey; sample not
+    stated in this article.
+- key: lexisnexis-tcoc-apac-2024
+  title: True Cost of Financial Crime Compliance Study - Asia Pacific (press release)
+  publisher: LexisNexis Risk Solutions (study by Forrester Consulting)
+  url: https://risk.lexisnexis.com/global/en/about-us/press-room/press-release/20240306-true-cost-of-compliance
+  date_published: '2024-03-06'
+  date_accessed: 2026-11-18
+  kind: vendor-survey
+  quotes:
+  - text: The total cost of financial crime compliance in the APAC study countries has reached U.S.$45 billion.
+    locator: para 1
+    supports: Financial crime compliance in the APAC study markets costs about USD 45bn a year.
+  - text: compiles responses from 271 senior decision-makers responsible for financial crime compliance at financial
+      institutions in the APAC region including Australia, China, India, Japan and Singapore.
+    locator: Study description
+    supports: Sample is 271, including Singapore; Hong Kong is not named.
+  - text: 70% of organizations noticed rises in technology costs related to compliance/know-your-customer (KYC)
+      software
+    locator: Key findings
+    supports: KYC software cost is rising for most APAC institutions.
+  caveats: Vendor-commissioned survey; total cost is a modelled estimate; datelined Hong Kong but HK not in the
+    named sample; no per-review or onboarding-time figure.
+- key: pwc-sg-pkyc-2022
+  title: 'Perpetual KYC: A new approach to periodic reviews'
+  publisher: PwC Singapore
+  url: https://www.pwc.com/sg/en/consulting/assets/pkyc-a-new-approach-to-periodic-reviews.pdf
+  date_published: '2022-01'
+  date_accessed: 2026-11-25
+  kind: vendor-survey
+  quotes:
+  - text: 'Corporate customer: 62hrs for complex structure versus 18.5hrs for simple structure'
+    locator: PDF p.5
+    supports: Staff effort for one corporate KYC periodic review runs from about 18 hours (simple structure) to 62
+      hours (complex), with 40.3 hours for a typical case (Exhibit 1, PDF p.6).
+  - text: 'Total 18.5 40.3 62'
+    locator: PDF p.6, Exhibit 1 (hours per corporate review, simple / typical / complex; rows include Screening 4 10
+      16 and Four-eye review 6 12 18)
+    supports: A typical corporate review takes 40.3 staff hours, of which screening 10 and four-eye review 12.
+  - text: In some cases, through the adoption of P-KYC, banks have achieved savings of up to 60%-80% of the total effort
+      across the entire customer book.
+    locator: PDF p.3
+    supports: An upper bound for effort savings from redesigned periodic review.
+  caveats: Consultancy research; a footnote says five medium-sized banks were sampled. The paper also promotes partner
+    vendors. pwc.com refuses automated fetches; read from the Wayback Machine copy
+    (web.archive.org/web/20251221125220/...). Text extracted from the PDF table, so the Exhibit quote is the row as
+    extracted.
+- key: hkma-regtech-case-studies-2021
+  title: 'AML/CFT Regtech: Case Studies and Insights'
+  publisher: Hong Kong Monetary Authority
+  url: https://www.hkma.gov.hk/media/eng/doc/key-information/guidelines-and-circular/2021/20210121e2a1.pdf
+  date_published: '2021-01-21'
+  date_accessed: 2026-11-25
+  kind: guidance
+  quotes:
+  - text: Bank E had over 300 analysts working on name screening cases.
+    locator: PDF p.22, Bank E, Context & Background
+    supports: Clearing name-screening hits is labour-heavy at a large bank in Hong Kong.
+  - text: reducing the number of manual alert reviews by approximately 35% across multiple jurisdictions (as high as
+      50% in some)
+    locator: PDF p.23, Bank E, Strategic Importance
+    supports: A machine-learning screening tool cut manual alert reviews by about 35%, up to 50%, in production.
+  caveats: Anonymised bank; no time per alert given. Two-column PDF layout, so the second quote was read across the
+    column break.
+- key: fincen-bo-pra-renewal-2024
+  title: Agency Information Collection Activities; Proposed Renewal; Comment Request; Renewal Without Change of the
+    Beneficial Ownership Requirements for Legal Entity Customers
+  publisher: US Financial Crimes Enforcement Network (Federal Register 89 FR 14148)
+  url: https://www.govinfo.gov/content/pkg/FR-2024-02-26/pdf/2024-03965.pdf
+  date_published: '2024-02-26'
+  date_accessed: 2026-11-25
+  kind: regulation
+  quotes:
+  - text: 'review and recordkeeping of the beneficial ownership information: 80 minutes. A range of 40 to 120 minutes
+      per legal entity customer'
+    locator: p.14148, Paperwork Reduction Act burden estimate
+    supports: Identifying and verifying beneficial owners takes about 40 to 120 minutes per legal-entity customer
+      under the US rule.
+  caveats: US rule based on the customer's own certification at a 25% threshold, so lighter than tracing a layered
+    ownership chain through registries.
+- key: omb-a76-2003
+  title: Circular No. A-76 (Revised), Performance of Commercial Activities
+  publisher: US Office of Management and Budget
+  url: https://www.whitehouse.gov/wp-content/uploads/2021/01/a76_incl_tech_correction.pdf
+  date_published: '2003-05-29'
+  date_accessed: 2026-11-25
+  kind: guidance
+  quotes:
+  - text: divide by 1,776 annual productive hours. The productive hours shall exclude annual leave, sick leave,
+      administrative leave, training, and other nonproductive hours
+    locator: Attachment C, full-time-equivalent calculation
+    supports: A standard costing convention puts productive hours in a full-time year at 1,776, after leave and
+      training.
+  caveats: US federal costing convention, not a bank or Hong Kong figure.
+- key: gleif-kyc-onboarding-2018
+  title: 'Know Your Customer (KYC): The Challenges Faced by the Banking Sector When Onboarding New Client Organizations'
+  publisher: Global Legal Entity Identifier Foundation (GLEIF)
+  url: https://www.gleif.org/lei-solutions/lei-in-kyc-a-new-future-for-legal-entity-identification/gleif-research-findings_challenges-onboarding-client-organizations-in-banking-sector_v1.0-final.pdf
+  date_published: '2018-05'
+  date_accessed: 2026-11-25
+  kind: survey
+  quotes:
+  - text: New clients typically take 6 weeks to onboard – more if 4+ identifiers are used. A quarter of the process
+      involves manual tasks
+    locator: p.14
+    supports: About a quarter of corporate onboarding work is manual, such as entering data by hand.
+  caveats: 2018; 102 senior bank salespeople; the publisher promotes the LEI.

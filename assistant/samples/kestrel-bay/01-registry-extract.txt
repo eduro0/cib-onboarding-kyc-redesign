@@ -1,0 +1,13 @@
+DOCUMENT: Company particulars search (registry extract)
+COMPANY: KESTREL BAY LOGISTICS LIMITED, company number 3166021
+DATE: 2026-10-28
+
+Registered office: Room 506, 12 Kestrel Bay Road, Tsuen Wan, New Territories, Hong Kong
+Directors:
+- WONG Ka-ho (appointed 2015-08-03)
+- Mei TANAKA (appointed 2017-02-20)
+- Ravi SHARMA (appointed 2026-05-11)
+Members (latest annual return, 2026-08-03):
+- WONG Ka-ho, 40%
+- Mei TANAKA, 30%
+- Northgate Ventures Ltd (British Virgin Islands), 30%

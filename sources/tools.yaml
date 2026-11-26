@@ -1,0 +1,127 @@
+# Public sources: tools. Researched 2026-11-18; every quote checked against the downloaded page or PDF.
+- key: google-gems-free-2025
+  title: New Gemini app features, available to try at no cost
+  publisher: Google (The Keyword blog; Dave Citron, Senior Director, Product Management, Gemini app)
+  url: https://blog.google/products/gemini/new-gemini-app-features-march-2025/
+  date_published: '2025-03-13'
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: Gems let you customize Gemini to create your own personal AI expert on any topic, and are starting to
+      roll out for everyone at no cost in the Gemini app.
+    locator: '''Gems are now available for everyone'' section'
+    supports: Free Google accounts can create Gems (since March 2025).
+  - text: Just go to the “Gems manager” on desktop, write instructions, give it a name and then chat with it whenever
+      you want.
+    locator: same section
+    supports: Gems are created from the desktop web app's Gems manager.
+  - text: You can add files to give your Gem more context or to reference specific docs in your chats with the Gem.
+      Learn more about supported file types and limits .
+    locator: Use Gems in Gemini Apps, https://support.google.com/gemini/answer/15146780 ('Upload files to give your
+      Gem more context')
+    supports: Gems accept knowledge files (upload or Google Drive); the numeric per-Gem file limit is on a linked
+      page that was not fetched.
+  caveats: Current help page (https://support.google.com/gemini/answer/15236321) confirms Gems can be created with
+    a personal Google Account (age 13+) but does not restate 'no cost'. Press reports say free users got mobile
+    Gem access in March 2026; not verified.
+- key: gemini-gems-now-skills
+  title: Gem manager (Gemini web app, signed in)
+  publisher: Google (Gemini web app)
+  url: https://gemini.google.com/gems/view
+  date_published: In-app notice, undated
+  date_accessed: 2026-11-24
+  kind: product-doc
+  quotes:
+  - text: Your Gems are now skills
+    locator: banner at the top of the Gem manager page
+    supports: Gemini has renamed Gems to skills; new ones are made under Customize → Skills.
+  - text: If you proceed, your shared skill files will be saved in the Gemini Skills folder in your Google Drive.
+      They will be protected by Drive permissions.
+    locator: dialog shown by a skill's More options → Share skill
+    supports: A skill is shared through Google Drive, so its access follows Drive sharing.
+  caveats: Read in the signed-in web app, not on a public help page. The Gem manager also says Gems can be viewed
+    and their remaining files saved until 24 December 2026.
+- key: gemini-web-app-countries
+  title: Where you can use the Gemini web app
+  publisher: Google (Gemini Apps Help)
+  url: https://support.google.com/gemini/answer/13575153?hl=en
+  date_published: Undated help page
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: The Gemini web app is currently available in more than 70 languages and over 230 countries and territories.
+    locator: page intro
+    supports: Gemini web app availability is broad; the country list on the page includes Hong Kong and Singapore.
+  caveats: Hong Kong and Singapore appear in the listed countries (checked by text search). The mobile app may differ.
+    Check NotebookLM / Gemini Notebook country availability for HK separately (not verified).
+- key: gemini-notebook-plans-limits
+  title: Learn about Gemini Notebook’s plans (formerly NotebookLM)
+  publisher: Google (Gemini Notebook Help)
+  url: https://support.google.com/notebooklm/answer/16213268?hl=en
+  date_published: Undated help page
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: Sign up at no charge by using your gmail account.
+    locator: Plans table, 'Gemini Notebook without an AI plan' column
+    supports: NotebookLM (now called Gemini Notebook in Google Help) is free with a Gmail account.
+  - text: Each source can contain up to 500,000 words or up to 200MB for uploaded files. You can include up to 50
+      sources (for Free users).
+    locator: https://support.google.com/notebooklm/answer/16215270 (Add or discover new sources)
+    supports: Free limit is 50 sources per notebook, each up to 500,000 words or 200MB.
+  caveats: 'Plans table (subject to change) shows free tier: 100 notebooks/user, 50 sources/notebook; paid tiers
+    100-600 sources. The help centre now calls the product ''Gemini Notebook''; the URL path is still /notebooklm.'
+- key: data-studio-sheets-free
+  title: Connect to Google Sheets | Data Studio (formerly Looker Studio)
+  publisher: Google Cloud Documentation
+  url: https://docs.cloud.google.com/looker/docs/studio/connect-to-google-sheets
+  date_published: Undated doc page; rebrand noted in release notes 2026-04-16
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: A Google Sheets data source can connect to a single worksheet in a Google Sheet.
+    locator: How to connect to Google Sheets
+    supports: Data Studio (ex-Looker Studio) connects to Google Sheets natively.
+  - text: We've rebranded Looker Studio as Data Studio.
+    locator: Release notes, April 16, 2026, https://docs.cloud.google.com/data-studio/release-notes
+    supports: Looker Studio is now called Data Studio; use the new name in the deck.
+  - text: Data Studio Pro is the paid version of Data Studio.
+    locator: About Data Studio Pro, https://docs.cloud.google.com/looker/docs/studio/about-looker-studio-pro
+    supports: The standard Data Studio is the unpaid version; Pro is the paid upgrade.
+  caveats: '''Free'' is inferred from ''Pro is the paid version''; no page explicitly says ''free of charge''. ''What
+    you need'' page: creating reports needs a signed-in Google Account in a supported region.'
+- key: google-sites-help
+  title: How to use Google Sites
+  publisher: Google (Sites Help)
+  url: https://support.google.com/sites/answer/6372878?hl=en
+  date_published: Undated help page
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: 'Tip: Google Accounts managed by parents can''t use Google Sites, but are able to see and edit pre-existing
+      sites in Google Sites.'
+    locator: page intro
+    supports: Ordinary personal Google Accounts can create and publish Google Sites (only parent-managed accounts
+      are excluded).
+  - text: To publish your changes, at the top right, click Publish .
+    locator: Create a site
+    supports: Publishing is built in.
+  caveats: No fetched Google page states the price explicitly; 'free with a personal Google Account' is inferred
+    from the help page and is common knowledge, not a quoted statement.
+- key: bpmn-io-camunda-modeler
+  title: bpmn.io License; Camunda Modeler (GitHub repository)
+  publisher: Camunda Services GmbH
+  url: https://bpmn.io/license/
+  date_published: Undated; copyright 2014-present
+  date_accessed: 2026-11-18
+  kind: product-doc
+  quotes:
+  - text: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+      documentation files (the "Software"), to deal in the Software without restriction
+    locator: bpmn.io License
+    supports: bpmn-js / the bpmn.io toolkit is free to use (MIT-style licence with a watermark condition).
+  - text: A desktop application for modeling BPMN diagrams, DMN decisions, and Forms, powered by bpmn.io .
+    locator: README, https://github.com/camunda/camunda-modeler (repository shows 'MIT license')
+    supports: Camunda Modeler is a free, open-source (MIT) desktop BPMN editor; a browser editor is at https://demo.bpmn.io/.
+  caveats: The bpmn.io licence requires the bpmn.io watermark to stay visible. Camunda's hosted web modeler needs
+    a (free-tier) Camunda account; its plan limits were not checked.

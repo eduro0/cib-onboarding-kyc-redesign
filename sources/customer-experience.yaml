@@ -1,0 +1,191 @@
+# Public sources: customer experience. Researched 2026-11-18; every quote checked against the downloaded page or PDF.
+- key: hkma-derisking-2016
+  title: De-risking and Financial Inclusion
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20160908-1-EN/20160908-1-EN.pdf
+  date_published: '2016-09-08'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: It is inappropriate for AIs to adopt a one-size-fits-all approach.
+    locator: Guiding principle (a) Risk differentiation
+    supports: The HKMA rejects uniform CDD for all customers in a segment.
+  - text: It is inappropriate for AIs to impose requirements disproportionate to the risk level of the customer,
+      as this would result in undue burden on the customer and the AI concerned.
+    locator: Guiding principle (b) Proportionality
+    supports: Asking for more than the risk warrants is a regulatory concern, not only a customer-experience issue.
+  - text: RBA does not require or expect a “zero failure” outcome.
+    locator: Guiding principle (c) Not a 'Zero Failure' regime
+    supports: The HKMA does not expect CDD to remove all risk before onboarding.
+  caveats: 2016 circular, still cited by HKMA in 2023 and 2024 circulars. Original HKMA URL https://www.hkma.gov.hk/media/eng/doc/key-information/guidelines-and-circular/2016/20160908e1.pdf
+    redirects to BRDR.
+- key: hkma-remote-onboarding-corporate-2020
+  title: Remote on-boarding of corporate customers
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20200924-1-EN/20200924-1-EN.pdf
+  date_published: '2020-09-24'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: Customer due diligence (CDD) is more extensive compared with individuals and typically involves a number
+      of steps
+    locator: p.1
+    supports: Corporate CDD has more steps than individual CDD (entity, representatives and authority, beneficial
+      owners, structure and business).
+  - text: it is not necessary to ask a corporate’s representative to visit the AI’s business premise or to be physically
+      present in front of a staff of the AI concerned in every case.
+    locator: p.2
+    supports: Fully remote corporate onboarding is allowed in HK under a risk-based approach.
+  - text: processes adopted by AIs for remote on-boarding should be at least as robust as those performed when the
+      customer is in front of the staff of an AI.
+    locator: p.2
+    supports: 'Regulation is technology-neutral: a digital or AI process must be at least as robust as the face-to-face
+      one.'
+  - text: The processes should reflect the principle that CDD is not merely a document collection exercise.
+    locator: p.2
+    supports: Redesign should aim at understanding the client's risk, not only at collecting documents faster.
+  caveats: Original HKMA URL https://www.hkma.gov.hk/media/eng/doc/key-information/guidelines-and-circular/2020/20200924e1.pdf
+    redirects to BRDR.
+- key: hkma-access-corporate-2023
+  title: Access to banking services for corporate customers
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20230427-1-EN/20230427-1-EN.pdf
+  date_published: '2023-04-27'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: the HKMA occasionally receives feedback from corporates seeking to open bank accounts, which is largely
+      related to execution issues.
+    locator: pp.1-2
+    supports: The HKMA sees corporate account-opening problems mainly as execution issues, which process redesign
+      can address.
+  - text: AIs should avoid a wholesale de-risking approach, i.e. precluding customers with common backgrounds (e.g.
+      nationality and new industries) from target customer segments.
+    locator: p.2, 'Risk management vs. wholesale de-risking'
+    supports: Excluding whole customer groups is discouraged; risk must be assessed case by case.
+  - text: AIs should review their account opening procedures and customer due diligence (CDD) measures, as well
+      as provide staff training, to ensure a balanced approach
+    locator: p.2
+    supports: The HKMA explicitly asks banks to review their account-opening procedures.
+  caveats: Annex of good practices not separately quoted. Original HKMA URL redirects to BRDR.
+- key: hkma-rba-cdd-2024
+  title: Effective Execution of Risk-based Approach for Customer Due Diligence
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20240208-3-EN/20240208-3-EN.pdf
+  date_published: '2024-02-08'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: information requests to customers should be risk sensitive, not excessive and should not duplicate information
+      already held by or known to the AIs concerned, or are publicly available.
+    locator: p.1
+    supports: The HKMA says banks should not ask clients again for data they already hold or that is public, a direct
+      case for pre-filling.
+  - text: CDD measures which are disproportionate to ML/TF risks are not consistent with the legal and regulatory
+      requirements and should not be communicated to customers as such.
+    locator: p.2
+    supports: Over-asking cannot be passed off to clients as a regulatory requirement.
+  - text: (i.e. risk differentiation, proportionality, and not a “zero failure” regime)
+    locator: p.1
+    supports: The HKMA restated its three risk-based-approach principles in 2024.
+  caveats: Applies to onboarding and reviews generally; examples lean to source of wealth and PEPs.
+- key: hkma-consumer-account-opening-process
+  title: Account Opening Process (Smart Consumers / Account Opening and Maintenance)
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/eng/smart-consumers/account-opening/account-opening-process/
+  date_published: Last revision date 2026-10-26
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: consumer information web page
+  quotes:
+  - text: Depending on whether the customer has provided sufficient information to the bank for it to undertake
+      the CDD process, the account opening process can be completed within several days for simple cases.
+    locator: page body
+    supports: The only HKMA statement on timing found is qualitative ('several days for simple cases'), with no
+      published median.
+  caveats: Consumer page covering personal and business accounts; 'simple cases' is not defined. No HKMA statistic
+    on corporate account-opening time was found.
+- key: legco-lcq16-2025-account-opening
+  title: 'LCQ16: Opening of bank accounts by non-commercial organisations'
+  publisher: HKSAR Government (Legislative Council written reply, Financial Services and the Treasury Bureau after
+    consulting HKMA)
+  url: https://www.info.gov.hk/gia/general/202506/18/P2025061800211p.htm
+  date_published: '2025-06-18'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: LegCo written question and government reply
+  quotes:
+  - text: As the HKMA understood from major banks, the account opening process could generally be completed in around
+      two weeks upon receipt of the required information and documents from applicants.
+    locator: Reply
+    supports: The HKMA reports (from major banks) about two weeks once documents are complete; the clock starts
+      only at complete documents.
+  - text: it takes only one to two months on average for commercial organisations to open accounts.
+    locator: Question (legislator's statement, not the government's)
+    supports: A legislator put average commercial account opening at one to two months; this is an assertion, not
+      an official statistic.
+  - text: These measures include providing applicants with updates on the progress of their account opening applications,
+      establishing review mechanisms and re-examining account opening applications upon customers' request.
+    locator: Reply
+    supports: Progress updates to applicants are an HKMA-recognised good practice, which a client-status feature
+      can reflect.
+  caveats: The two-week figure concerns owners' corporations (a type of legal person), not CIB clients. The one-to-two-month
+    figure is the legislator's claim. Neither is a CIB benchmark.
+- key: hkma-account-opening-whats-new-dbs-2026
+  title: DBS Hong Kong Pioneers Business Account Opening as Fast as within the Same Working Day with Enhanced Automation
+    Processes
+  publisher: DBS Bank (Hong Kong) Limited, hosted on HKMA 'What's New?' account-opening page
+  url: https://www.hkma.gov.hk/media/eng/doc/other-information/ac-opening/20260401e1.pdf
+  date_published: '2026-04-01'
+  date_accessed: 2026-11-18
+  kind: product-doc
+  doc_type: bank press release (HKMA page notes content is provided by the banks)
+  quotes:
+  - text: Once eIDV is successfully completed and no screening issues are identified, the account is automatically
+      opened without manual intervention
+    locator: para 2
+    supports: Straight-through processing with no manual step is live in HK for simple business accounts.
+  - text: For Hong Kong incorporated entities whose shareholders or directors are Mainland China ID holders, we
+      continue to offer a streamlined account opening process in as fast as 5 working days
+    locator: para 4
+    supports: Speed falls as ownership complexity rises, even at a digital-first bank.
+  caveats: 'SME business accounts with simple HK ownership, not CIB. ''As fast as'' is a marketing best case, not
+    an average. Listing page: https://www.hkma.gov.hk/eng/smart-consumers/account-opening/whats-new/'
+- key: hsbc-cdi-companies-registry-2024
+  title: HSBC enhances online account opening for Hong Kong SMEs via CDI connection with Companies Registry
+  publisher: HSBC (The Hongkong and Shanghai Banking Corporation Limited)
+  url: https://www.about.hsbc.com.hk/news-and-media/hsbc-enhances-online-account-opening-for-hong-kong-smes-via-cdi-connection
+  date_published: '2024-08-26'
+  date_accessed: 2026-11-18
+  kind: product-doc
+  doc_type: bank press release
+  quotes:
+  - text: About 40 per cent of the required application information can be populated by the automated data feeds
+      from the Companies Registry.
+    locator: para 2
+    supports: Registry data through HKMA's Commercial Data Interchange can pre-fill about 40% of an SME application
+      (a pre-fill anchor).
+  - text: about 1,600 online applications were partially auto-filled with commercial data obtained from the Companies
+      Registry
+    locator: Christina Ong quote
+    supports: 'Scale of the pilot from April 2024: about 1,600 applications.'
+  caveats: Self-reported by the bank; SME segment; registry data covers company names, types, addresses and directors,
+    not beneficial owners.
+- key: mas-cosmic
+  title: COSMIC
+  publisher: MAS
+  url: https://www.mas.gov.sg/regulation/anti-money-laundering/cosmic
+  date_published: Platform launched 2024-04-01 (page undated)
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: regulator web page
+  quotes:
+  - text: COSMIC allows FIs to securely share with one another, information on customers who exhibit multiple “red
+      flags” that may indicate potential financial crime concerns, if stipulated thresholds are met.
+    locator: page body
+    supports: Singapore has a regulator-run platform for banks to share customer risk information.
+  - text: 'COSMIC currently focuses on three key financial crime risks in commercial banking: 1. Misuse of legal
+      persons, 2. Misuse of trade finance for illicit purposes, and 3. Proliferation financing.'
+    locator: page body
+    supports: COSMIC targets corporate (legal-person) risk, so it is relevant to Singapore corporate KYC.
+  caveats: 'Six launch banks: DBS, OCBC, UOB, SCB, Citibank, HSBC. Hong Kong has no equivalent described here.'

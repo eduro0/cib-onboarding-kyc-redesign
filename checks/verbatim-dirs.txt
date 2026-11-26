@@ -1,0 +1,5 @@
+# Folders whose files are read word for word (prompts, text pasted into another tool). They never carry an
+# Implements: line; their row in a spec table is their trace.
+prompts/
+# Pasted into a Gem as is; an Implements comment would become part of the Gem.
+deliverables/gem/

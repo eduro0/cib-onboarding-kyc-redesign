@@ -1,0 +1,11 @@
+DOCUMENT: Company particulars search (registry extract)
+COMPANY: QUIET PINE INSTRUMENTS LIMITED, company number 2455390
+DATE: 2026-10-30
+
+Registered office: 8/F, 3 Pine Hill Street, Sheung Wan, Hong Kong
+Directors:
+- HO Mei-ling (appointed 2012-05-02)
+- Tomas BERG (appointed 2014-01-06)
+Members (latest annual return, 2026-05-02):
+- HO Mei-ling, 55%
+- Tomas BERG, 45%

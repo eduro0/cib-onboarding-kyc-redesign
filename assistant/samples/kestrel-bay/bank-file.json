@@ -1,0 +1,17 @@
+{
+  "note": "Fictional bank record, made up for this demo.",
+  "entity": {"name": "Kestrel Bay Logistics Limited", "registration_number": "3166021", "jurisdiction": "Hong Kong",
+             "registered_address": "Room 506, 12 Kestrel Bay Road, Tsuen Wan, New Territories, Hong Kong"},
+  "directors": ["WONG Ka-ho", "Mei TANAKA"],
+  "ownership": [{"owner": "WONG Ka-ho", "owner_type": "person", "owned": "Kestrel Bay Logistics Limited", "percent": 70},
+                {"owner": "Mei TANAKA", "owner_type": "person", "owned": "Kestrel Bay Logistics Limited", "percent": 30}],
+  "risk_rating": "medium",
+  "last_review": "2024-11-25",
+  "documents_on_file": [{"type": "certificate_of_incorporation", "date": "2015-08-03"},
+                        {"type": "articles_of_association", "date": "2015-08-03"},
+                        {"type": "significant_controllers_register", "date": "2024-10-30"},
+                        {"type": "id_document", "subject": "WONG Ka-ho", "date": "2020-01-15"},
+                        {"type": "id_document", "subject": "Mei TANAKA", "date": "2022-04-02"},
+                        {"type": "proof_of_address", "subject": "WONG Ka-ho", "date": "2024-10-01"},
+                        {"type": "proof_of_address", "subject": "Mei TANAKA", "date": "2024-09-12"}]
+}

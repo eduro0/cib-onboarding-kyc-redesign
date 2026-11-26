@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Implements: workflow/checked-before-done
+# Runs `make check` before every commit. A `Check:` commit adds a test meant to fail first, and a `Merge` commit
+# may join branches mid-way, so both are let through; everything else needs a green check.
+subject=$(head -n1 "$1")
+case "$subject" in
+  Check:*|Merge*) exit 0 ;;
+esac
+if ! out=$(make check 2>&1); then
+  echo "commit refused: make check is failing (only 'Check:' commits may be red)" >&2
+  printf '%s\n' "$out" | tail -n 20 >&2
+  exit 1
+fi

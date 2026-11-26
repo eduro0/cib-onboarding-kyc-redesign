@@ -1,0 +1,72 @@
+{
+  "model": "anthropic/claude-sonnet-5.5",
+  "date": "2026-11-25",
+  "prompt_tokens": 1101,
+  "completion_tokens": 1458,
+  "cost_usd": 0.016782,
+  "reply": {
+    "entity": {
+      "name": {
+        "value": "QUIET PINE INSTRUMENTS LIMITED",
+        "doc": "01-registry-extract.txt",
+        "quote": "QUIET PINE INSTRUMENTS LIMITED"
+      },
+      "registration_number": {
+        "value": "2455390",
+        "doc": "01-registry-extract.txt",
+        "quote": "company number 2455390"
+      },
+      "registered_address": {
+        "value": "8/F, 3 Pine Hill Street, Sheung Wan, Hong Kong",
+        "doc": "01-registry-extract.txt",
+        "quote": "Registered office: 8/F, 3 Pine Hill Street, Sheung Wan, Hong Kong"
+      }
+    },
+    "director_mentions": [
+      {
+        "name": "HO Mei-ling",
+        "doc": "01-registry-extract.txt",
+        "quote": "HO Mei-ling (appointed 2012-05-02)"
+      },
+      {
+        "name": "Tomas BERG",
+        "doc": "01-registry-extract.txt",
+        "quote": "Tomas BERG (appointed 2014-01-06)"
+      }
+    ],
+    "ownership": [
+      {
+        "owner": "HO Mei-ling",
+        "owner_type": "person",
+        "owned": "QUIET PINE INSTRUMENTS LIMITED",
+        "percent": 55,
+        "doc": "01-registry-extract.txt",
+        "quote": "HO Mei-ling, 55%"
+      },
+      {
+        "owner": "Tomas BERG",
+        "owner_type": "person",
+        "owned": "QUIET PINE INSTRUMENTS LIMITED",
+        "percent": 45,
+        "doc": "01-registry-extract.txt",
+        "quote": "Tomas BERG, 45%"
+      }
+    ],
+    "documents": [
+      {
+        "file": "01-registry-extract.txt",
+        "type": "registry_extract",
+        "subject": "QUIET PINE INSTRUMENTS LIMITED",
+        "date": "2026-10-30",
+        "expiry": null
+      },
+      {
+        "file": "02-business-registration.txt",
+        "type": "business_registration",
+        "subject": "QUIET PINE INSTRUMENTS LIMITED",
+        "date": "2026-05-02",
+        "expiry": "2027-05-01"
+      }
+    ]
+  }
+}

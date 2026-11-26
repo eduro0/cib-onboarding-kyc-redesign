@@ -1,0 +1,261 @@
+# Public sources: regulation. Researched 2026-11-18; every quote checked against the downloaded page or PDF.
+- key: hk-amlo-sch2
+  title: 'Anti-Money Laundering and Counter-Terrorist Financing Ordinance (Cap. 615), Schedule 2: Requirements Relating
+    to Customer Due Diligence and Record-keeping'
+  publisher: Hong Kong SAR Government (Department of Justice e-Legislation); text read via HKLII
+  url: https://www.hklii.hk/en/legis/ord/615/sch2
+  date_published: Consolidated version dated 2026-09-24 (HKLII version list)
+  date_accessed: 2026-11-18
+  kind: regulation
+  quotes:
+  - text: owns or controls, directly or indirectly, including through a trust or bearer share holding, more than
+      25% of the issued share capital of the corporation
+    locator: Sch. 2, s.1(1), definition of 'beneficial owner', (a)(i)(A)
+    supports: Under HK law, an individual who owns or controls more than 25% of a corporation's issued shares is
+      a beneficial owner the bank must identify.
+  - text: exercises ultimate control over the management of the corporation
+    locator: Sch. 2, s.1(1), definition of 'beneficial owner', (a)(i)(C)
+    supports: Beneficial ownership also covers control of management, not only shareholdings, so the BPMN must include
+      a control-structure check.
+  - text: A financial institution or a DNFBP must continuously monitor the business relationship with a customer
+      by— ... reviewing from time to time documents, data and information relating to the customer ... to ensure
+      that they are up-to-date and relevant
+    locator: Sch. 2, s.5(1)(a)
+    supports: 'Periodic review is a statutory duty: banks must keep customer CDD records up to date and relevant.'
+  - text: a financial institution or a DNFBP may carry out any customer due diligence measure by means of an intermediary
+      specified in subsection (3) if— ... (a) the intermediary consents in writing to be the financial institution’s
+      or the DNFBP’s intermediary
+    locator: Sch. 2, s.18(1)
+    supports: Banks may rely on specified intermediaries for CDD if the intermediary agrees in writing.
+  - text: A financial institution or a DNFBP that carries out a customer due diligence measure by means of an intermediary
+      remains liable under this Ordinance for a failure to carry out
+    locator: Sch. 2, s.18(2)
+    supports: Liability for CDD stays with the bank even when an intermediary performs it.
+  caveats: The official e-Legislation site (https://www.elegislation.gov.hk/hk/cap615) needs JavaScript and could
+    not be fetched; the text was read from the HKLII mirror's API, version dated 2026-09-24. HKLII's rendering adds
+    spaces before possessives ('institution ’s'); quotes are normalised. Check against e-Legislation before formal
+    citation.
+- key: hkma-aml-cft-guideline-2023
+  title: Guideline on Anti-Money Laundering and Counter-Financing of Terrorism (For Authorized Institutions)
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/chi/doc-ldg/docId/getPdf/20230525-4-EN/AML-2.pdf
+  date_published: 2023-05 ("Revised May 2023"; effective 1 June 2023)
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: statutory guideline published under s.7 AMLO and s.7(3) Banking Ordinance
+  quotes:
+  - text: An RBA to AML/CFT means that jurisdictions, competent authorities, and AIs are expected to identify, assess
+      and understand the ML/TF risks to which they are exposed and take AML/CFT measures commensurate with those
+      risks
+    locator: para 2.1
+    supports: HK requires a risk-based approach, so review depth and frequency can vary by customer risk.
+  - text: Where the ML/TF risks are high, the AI should conduct enhanced due diligence (EDD) measures (see paragraph
+      4.9). In low risk situations, the AI may apply simplified due diligence (SDD) measures (see paragraph 4.8).
+    locator: para 4.1.2
+    supports: 'The process needs risk-tiered branches: SDD for low risk, standard CDD, and EDD for high risk.'
+  - text: For a customer that is a legal person, an AI should identify any natural person who ultimately has a controlling
+      ownership interest (i.e. more than 25%) in the legal person and any natural person exercising control of the
+      legal person
+    locator: para 4.4.9
+    supports: The HKMA guideline repeats the more-than-25% ownership test plus a control test for corporate customers.
+  - text: the AI completing such verification no later than 30 working days after the establishment of business
+      relationship
+    locator: para 4.7.4(a)
+    supports: Where verification is delayed, the HKMA's reasonable timeframe is generally 30 working days after
+      the relationship starts.
+  - text: the AI terminating business relationship with the customer if such verification remains uncompleted 120
+      working days after the establishment of business relationship
+    locator: para 4.7.4(c)
+    supports: 'Delayed verification has a hard stop: terminate at 120 working days.'
+  - text: An AI should obtain approval from its senior management to establish a business relationship that presents
+      a high ML/TF risk
+    locator: para 4.9.3
+    supports: High-risk corporate onboarding needs a senior-management approval step (a human decision point in
+      the BPMN).
+  - text: (a) obtaining approval from its senior management for establishing or continuing such business relationship;
+      and (b) taking reasonable measures to establish the customer’s or the beneficial owner’s source of wealth
+      and the source of the funds.
+    locator: para 4.9.10 (non-Hong Kong PEPs)
+    supports: If a customer or beneficial owner is a non-Hong Kong PEP, the bank needs senior-management approval
+      and source-of-wealth and source-of-funds checks.
+  - text: However, the ultimate responsibility for ensuring that CDD requirements are met remains with the AI.
+    locator: para 4.11.1
+    supports: Reliance on intermediaries does not transfer CDD responsibility.
+  - text: an AI cannot rely on an intermediary to continuously monitor its business relationship with a customer
+      for the purpose of complying with the requirements in section 5 of Schedule 2.
+    locator: footnote 48 (to para 4.11.1)
+    supports: Periodic review and ongoing monitoring cannot be delegated to a reliance intermediary.
+  - text: Trigger events may include the re-activation of a dormant relationship or a change in the beneficial ownership
+      or control of the account
+    locator: para 4.12.2
+    supports: Named trigger events for a review include a change in beneficial ownership or control and reactivation
+      of a dormant account.
+  - text: an AI should undertake reviews of existing CDD records of customers on a regular basis and/or upon trigger
+      events. Clear policies and procedures should be developed, especially on the frequency of periodic review
+      or what constitutes a trigger event.
+    locator: para 5.2
+    supports: HK expects both scheduled and trigger-based reviews, with the bank defining the frequency and the
+      triggers.
+  - text: All customers that present high ML/TF risks should be subject to a minimum of an annual review, or more
+      frequent reviews if deemed necessary by the AI
+    locator: para 5.3
+    supports: The only fixed review frequency in the HK guideline is at least annual review for high-risk customers;
+      the bank sets other frequencies.
+  - text: Keeping the CDD information up-to-date and relevant does not mean that an AI has to re-verify identities
+      that have been verified (unless doubts arise as to the veracity or adequacy of the information previously
+      obtained
+    locator: footnote 57 (to para 5.2)
+    supports: A periodic review need not re-verify identity from scratch, which supports a 'confirm what changed'
+      review design.
+  caveats: Latest gazetted version found (May 2023). A Gazette copy exists (https://www.gld.gov.hk/egazette/pdf/20232721/egn202327213117.pdf)
+    but returned HTML to the fetcher. AMLO has later consolidated versions (2025, 2026), and HKMA issued separate
+    PEP guidance in Nov 2025 (seen in search results, not fetched); check whether the Guideline has been revised
+    again before final use. The 2023 text uses 'non-Hong Kong PEP' terminology.
+- key: cr-significant-controllers-register
+  title: Significant Controllers Register - Overview; and Significant Controllers Register FAQ
+  publisher: Hong Kong Companies Registry
+  url: https://www.cr.gov.hk/en/scr/index.htm
+  date_published: Regime in force since 2018-03-01 (page undated)
+  date_accessed: 2026-11-18
+  kind: guidance
+  quotes:
+  - text: the Companies Ordinance (Cap. 622) is amended to require a company incorporated in Hong Kong and a re-domiciled
+      company to obtain and maintain up-to-date beneficial ownership information by way of keeping a Significant
+      Controllers Register.
+    locator: Overview page
+    supports: HK-incorporated companies must keep their own register of significant controllers, which a bank can
+      ask the client to provide.
+  - text: The Register should be open for inspection by law enforcement officers upon demand.
+    locator: Overview page
+    supports: The register is not a public database the bank can query; the bank must get it from the client.
+  - text: The person holds, directly or indirectly, more than 25% of the issued shares in the company
+    locator: FAQ Q4, https://www.cr.gov.hk/en/scr/faq.htm
+    supports: The significant-controller test uses the same more-than-25% threshold as the AMLO, so the two can
+      be reconciled.
+  - text: Which law enforcement officers will have access to the significant controllers register?
+    locator: FAQ Q28 (answer lists Companies Registry, Customs and Excise, HKMA, Police, Immigration, IRD, IA, ICAC,
+      SFC)
+    supports: Access is limited to listed authorities (HKMA among them), not banks acting as private firms.
+  caveats: Commencement date 1 March 2018 is from the overview page. FAQ Q3 (seen via a summary tool, not verified
+    verbatim) says the register is kept at the company's registered office and not filed with the Registry.
+- key: mas-notice-626
+  title: 'MAS Notice 626: Prevention of Money Laundering and Countering the Financing of Terrorism - Banks'
+  publisher: MAS
+  url: https://www.mas.gov.sg/-/media/amld-amendments---30-june-2025/mas-notice-626.pdf
+  date_published: 2024-03-28, last revised 2025-06-30
+  date_accessed: 2026-11-18
+  kind: regulation
+  quotes:
+  - text: A bank shall ensure that the CDD data, documents and information obtained in respect of customers, natural
+      persons appointed to act on behalf of the customers, connected parties of the customers and beneficial owners
+      of the customers, are relevant and kept up-to-date
+    locator: para 6.24
+    supports: Singapore requires CDD records on customers, connected parties and beneficial owners to be kept up
+      to date.
+  - text: by undertaking reviews of existing CDD data, documents and information, particularly for higher risk categories
+      of customers.
+    locator: para 6.24 (continued)
+    supports: Reviews are to focus on higher-risk customers.
+  - text: identify the natural persons (whether acting alone or together) who ultimately own the legal person
+    locator: para 6.14(a)(i)
+    supports: Singapore's beneficial-owner rule for legal persons; no fixed percentage appears in the Notice itself.
+  caveats: Notice text sets no review frequency; see MAS Guidelines to Notice 626.
+- key: mas-guidelines-notice-626
+  title: Guidelines to MAS Notice 626 on Prevention of Money Laundering and Countering the Financing of Terrorism
+  publisher: MAS
+  url: https://www.mas.gov.sg/-/media/amld-amendments---30-june-2025/guidelines-to-mas-notice-626.pdf
+  date_published: 2024-03-28, last revised 2025-07-01
+  date_accessed: 2026-11-18
+  kind: guidance
+  quotes:
+  - text: The frequency of CDD review may vary depending on each customer’s risk profile. Higher risk customers
+      should be subject to more frequent periodic review (e.g. on an annual basis)
+    locator: para 6-10-6
+    supports: As in HK, Singapore gives annual review as the example for high-risk customers and lets banks set
+      other frequencies.
+  - text: for all other risk categories of customers, a bank should obtain updated CDD information upon the occurrence
+      of a trigger event.
+    locator: para 6-10-4(b)
+    supports: For customers that are not higher risk, Singapore guidance leans on trigger-based updates.
+  - text: Examples of trigger events are when (i) a significant transaction takes place, (ii) a material change
+      occurs in the way the customer’s account is operated
+    locator: para 6-10-5
+    supports: 'MAS-named trigger events (the list continues: CDD policy change; information received through COSMIC
+      or otherwise).'
+  - text: It may be based on a threshold (e.g. any person owning more than 25% of the legal person or legal arrangement,
+      taking into account any aggregated ownership for companies with cross-shareholdings).
+    locator: para 6-8-2
+    supports: MAS cites 25% only as an example threshold, unlike HK's statutory definition.
+  caveats: Guidance, not the Notice itself.
+- key: fatf-recommendations
+  title: 'International Standards on Combating Money Laundering and the Financing of Terrorism & Proliferation:
+    The FATF Recommendations'
+  publisher: FATF (copy hosted by HK Companies Registry)
+  url: https://www.cr.gov.hk/en/compliance/aml_cft/FATF/FATF_Recommendations.pdf
+  date_published: Adopted 2012-02; this copy 'Updated October 2025'
+  date_accessed: 2026-11-18
+  kind: regulation
+  doc_type: international standard
+  quotes:
+  - text: Identifying the beneficial owner, and taking reasonable measures to verify the identity of the beneficial
+      owner, such that the financial institution is satisfied that it knows who the beneficial owner is.
+    locator: Recommendation 10(b)
+    supports: Identifying and verifying the beneficial owner is a core global CDD measure.
+  - text: Conducting ongoing due diligence on the business relationship and scrutiny of transactions undertaken
+      throughout the course of that relationship
+    locator: Recommendation 10(d)
+    supports: Ongoing due diligence (the basis of periodic review) is part of the global CDD standard.
+  - text: should conduct due diligence on such existing relationships at appropriate times.
+    locator: Recommendation 10, final paragraph
+    supports: FATF leaves the timing of review of existing customers to materiality and risk; it sets no fixed cycle.
+  - text: Countries should consider facilitating access to beneficial ownership and control information by financial
+      institutions and DNFBPs undertaking the requirements set out in Recommendations 10 and 22.
+    locator: Recommendation 24
+    supports: FATF encourages, but does not require, bank access to beneficial-ownership registers (HK's register
+      is not open to banks).
+  - text: ensure that there is adequate, accurate and up-to-date information on express trusts and other similar
+      legal arrangements including information on the settlor(s), trustee(s) and beneficiary(ies)
+    locator: Recommendation 25
+    supports: Trust structures in a corporate ownership chain need settlor, trustee and beneficiary details.
+  caveats: fatf-gafi.org returned 403/Cloudflare; quoted from the HK Companies Registry mirror (Oct 2025 version).
+    Search results suggest a possible June 2026 FATF update; not verified.
+- key: wolfsberg-cbddq-v1-4
+  title: Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) V1.4
+  publisher: Wolfsberg Group
+  url: https://db.wolfsberg-group.org/assets/3964cedf-a462-4e55-a1e7-ca7c70dfa7ec/CBDDQ%20v1.4.pdf
+  date_published: 2023 (copyright footer)
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: industry standard questionnaire
+  quotes:
+  - text: Is KYC renewed at defined frequencies based on risk rating (Periodic Reviews)?
+    locator: Q74
+    supports: The industry-standard questionnaire treats risk-based periodic review as a baseline control.
+  - text: Trigger-based or perpetual monitoring reviews
+    locator: 'Q74 a5 (answer options also: less than one year; 1-2 years; 3-4 years; 5 years or more)'
+    supports: Wolfsberg recognises trigger-based and perpetual review as an alternative to fixed cycles.
+  - text: Does the Entity maintain and report metrics on current and past periodic or trigger event due diligence
+      reviews?
+    locator: Q75
+    supports: Banks are expected to keep review metrics, which supports the KPI model.
+  caveats: Written for correspondent banking relationships (bank-to-bank), not corporate clients. No Wolfsberg FAQ
+    specifically on corporate periodic review was found.
+- key: omg-bpmn-2-0-2
+  title: Business Process Model and Notation (BPMN) Version 2.0.2
+  publisher: OMG (Object Management Group)
+  url: https://www.omg.org/spec/BPMN/2.0.2/PDF
+  date_published: 2013-12 (OMG document formal/2013-12-09)
+  date_accessed: 2026-11-18
+  kind: product-doc
+  doc_type: international specification (also ISO/IEC 19510)
+  quotes:
+  - text: A User Task is a typical “workflow” Task where a human performer performs the Task with the assistance
+      of a software application and is scheduled through a task list manager of some sort.
+    locator: Clause 10.3.3 Tasks, User Task, p.160
+    supports: Defines the User Task used for analyst and approver steps in the BPMN maps.
+  - text: A Lane is a sub-partition within a Process (often within a Pool) and will extend the entire length of
+      the Process level, either vertically
+    locator: Clause 9.3.2 Lanes
+    supports: Defines lanes used for RM, KYC analyst, AI assistant, compliance and client.
+  caveats: 'Canonical landing page: https://www.omg.org/spec/BPMN/. The ISO/IEC 19510 equivalence is from general
+    knowledge and was not checked in this fetch.'

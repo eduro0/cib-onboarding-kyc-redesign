@@ -1,0 +1,87 @@
+# Implements: process-maps/as-is-map, process-maps/pain-points, process-maps/moments-of-truth, process-maps/one-source, process-maps/decline-path
+# As-Is: corporate client onboarding and periodic KYC review at a CIB branch in Hong Kong.
+# One file feeds the BPMN XML, the picture and the KPI simulation (scripts/maps.py, scripts/simulate.py).
+# Step fields: col = column on the map; touch/wait = assumption keys in model/assumptions.yaml (staff hours,
+# elapsed days); gateway flows carry p (an assumption key for the share of cases taking that branch) or when
+# (a case attribute). Simulated, not real bank data.
+
+id: as_is
+title: "As-Is: corporate onboarding and periodic KYC review"
+lanes:
+  - {id: client, name: "Corporate client"}
+  - {id: rm, name: "Relationship manager"}
+  - {id: ops, name: "Onboarding & KYC operations"}
+  - {id: compliance, name: "Financial crime compliance"}
+  - {id: systems, name: "Systems"}
+
+steps:
+  - {id: start_new, type: start, lane: client, col: 0, label: "Client asks to open accounts", case: onboarding}
+  - {id: start_review, type: timer, lane: systems, col: 0, label: "Review opened before its due date", case: review}
+  - {id: prep_review, type: task, lane: ops, col: 1, label: "Pull the file and list what is out of date", touch: asis.prep_review.touch, wait: asis.prep_review.wait}
+  - {id: request_docs, type: task, lane: rm, col: 2, label: "Email the client a generic KYC checklist", touch: asis.request_docs.touch, wait: asis.request_docs.wait}
+  - {id: send_docs, type: client, lane: client, col: 3, label: "Gather and send documents", wait: asis.send_docs.wait}
+  - {id: check_pack, type: task, lane: ops, col: 4, label: "Check the pack is complete and current", touch: asis.check_pack.touch, wait: asis.check_pack.wait}
+  - {id: gw_complete, type: gateway, lane: ops, col: 5, label: "Complete?"}
+  - {id: chase, type: task, lane: rm, col: 5, label: "Chase the client for missing items", touch: asis.chase.touch, wait: asis.chase.wait}
+  - {id: key_data, type: task, lane: ops, col: 6, label: "Re-key data into KYC and core systems", touch: asis.key_data.touch, wait: asis.key_data.wait}
+  - {id: ubo, type: task, lane: ops, col: 7, label: "Trace the ownership chain to beneficial owners", touch: asis.ubo.touch, wait: asis.ubo.wait}
+  - {id: screen, type: system, lane: systems, col: 8, label: "Screen names: sanctions, PEP, adverse media", wait: asis.screen.wait}
+  - {id: clear_hits, type: task, lane: ops, col: 9, label: "Clear screening hits one by one", touch: asis.clear_hits.touch, wait: asis.clear_hits.wait}
+  - {id: rate, type: task, lane: ops, col: 10, label: "Assign the risk rating", touch: asis.rate.touch, wait: asis.rate.wait}
+  - {id: gw_risk, type: gateway, lane: ops, col: 11, label: "High risk or true match?", sticky: true}
+  - {id: edd, type: task, lane: compliance, col: 12, label: "Enhanced due diligence and compliance decision", touch: asis.edd.touch, wait: asis.edd.wait}
+  - {id: gw_edd, type: gateway, sticky: true, lane: compliance, col: 13, label: "Approved?"}
+  - {id: end_declined, type: end, lane: compliance, col: 14, label: "Declined or exited"}
+  - {id: qc, type: task, lane: ops, col: 14, label: "Quality-check the KYC file", touch: asis.qc.touch, wait: asis.qc.wait}
+  - {id: gw_qc, type: gateway, lane: ops, col: 15, label: "QC passed?"}
+  - {id: fix_file, type: task, lane: rm, col: 15, label: "Fix the defects QC found", touch: asis.fix_file.touch, wait: asis.fix_file.wait}
+  - {id: gw_type, type: gateway, lane: ops, col: 16, label: "Case type?"}
+  - {id: approve, type: task, lane: rm, col: 17, label: "Business signs off the relationship", touch: asis.approve.touch, wait: asis.approve.wait}
+  - {id: open_accounts, type: system, lane: systems, col: 19, label: "Open accounts and set up access", wait: asis.open_accounts.wait}
+  - {id: end_live, type: end, lane: client, col: 20, label: "Accounts live"}
+  - {id: update_file, type: task, lane: ops, col: 17, label: "Update the file, set the next review date", touch: asis.update_file.touch, wait: asis.update_file.wait}
+  - {id: end_current, type: end, lane: ops, col: 18, label: "File current"}
+
+flows:
+  - [start_new, request_docs]
+  - [start_review, prep_review]
+  - [prep_review, request_docs]
+  - [request_docs, send_docs]
+  - [send_docs, check_pack]
+  - [check_pack, gw_complete]
+  - {from: gw_complete, to: chase, label: "No", p: asis.pack_incomplete.p}
+  - {from: chase, to: send_docs, route: above}
+  - {from: gw_complete, to: key_data, label: "Yes"}
+  - [key_data, ubo]
+  - [ubo, screen]
+  - [screen, clear_hits]
+  - [clear_hits, rate]
+  - [rate, gw_risk]
+  - {from: gw_risk, to: edd, label: "Yes", p: high_risk.p}
+  - {from: gw_risk, to: qc, label: "No"}
+  - [edd, gw_edd]
+  - {from: gw_edd, to: qc, label: "Yes"}
+  - {from: gw_edd, to: end_declined, label: "No", p: edd_decline.p}
+  - [qc, gw_qc]
+  - {from: gw_qc, to: fix_file, label: "No", p: asis.qc_fail.p}
+  - {from: fix_file, to: qc, route: above}
+  - {from: gw_qc, to: gw_type, label: "Yes"}
+  - {from: gw_type, to: approve, label: "New client", when: onboarding}
+  - {from: gw_type, to: update_file, label: "Review", when: review}
+  - [approve, open_accounts]
+  - [open_accounts, end_live]
+  - [update_file, end_current]
+
+pain_points:
+  - {id: P1, step: request_docs, text: "Generic checklist by email: the client can't tell what applies to them"}
+  - {id: P2, step: chase, text: "Packs arrive incomplete, so the client is chased in several rounds"}
+  - {id: P3, step: key_data, text: "The same data is typed into several systems by hand"}
+  - {id: P4, step: ubo, text: "Ownership is traced through registries country by country"}
+  - {id: P5, step: clear_hits, text: "Most screening hits are false positives, each cleared by hand"}
+  - {id: P6, step: qc, text: "Defects surface at the end, sending the file back"}
+  - {id: P7, step: prep_review, text: "Each review restarts from scratch, even when nothing changed"}
+
+moments_of_truth:
+  - {id: M1, step: request_docs, text: "First request: is it clear what the bank needs from us?"}
+  - {id: M2, step: chase, text: "Asked again: does the bank remember what we already sent?"}
+  - {id: M3, step: end_live, text: "Accounts live: how long did it take to start doing business?"}

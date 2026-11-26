@@ -1,0 +1,15 @@
+# Implements: assistant/llm-reads-rules-decide
+# Document rules the assistant checks a pack against. Illustrative bank policy built from public rules, not any
+# real bank's policy; each line says where it comes from. Sources are keys in sources/*.yaml.
+
+beneficial_owner_threshold_percent: 25   # "more than 25%": [src:hk-amlo-sch2] and HKMA Guideline para 4.4.9 [src:hkma-aml-cft-guideline-2023]
+proof_of_address_max_age_days: 90        # common bank practice (3 months); a policy choice, (guess)
+
+onboarding:
+  entity:
+    - {name: "certificate of incorporation", any_of: [certificate_of_incorporation]}
+    - {name: "business registration certificate", any_of: [business_registration]}
+    - {name: "articles of association", any_of: [articles_of_association]}
+    - {name: "significant controllers register", any_of: [significant_controllers_register]}  # banks can't search the register, so the client provides it [src:cr-significant-controllers-register]
+    - {name: "register of directors", any_of: [register_of_directors, registry_extract, annual_return]}
+    - {name: "register of members", any_of: [register_of_members, registry_extract, annual_return]}

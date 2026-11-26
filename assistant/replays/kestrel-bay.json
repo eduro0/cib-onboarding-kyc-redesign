@@ -1,0 +1,25 @@
+{
+  "fixture": "Written by hand to the prompt's schema to stand in for a model reply, so the demo runs with no key. Record a real one with --live --record.",
+  "reply": {
+    "entity": {
+      "name": {"value": "Kestrel Bay Logistics Limited", "doc": "01-registry-extract.txt", "quote": "KESTREL BAY LOGISTICS LIMITED, company number 3166021"},
+      "registration_number": {"value": "3166021", "doc": "01-registry-extract.txt", "quote": "company number 3166021"},
+      "jurisdiction": {"value": "Hong Kong", "doc": "01-registry-extract.txt", "quote": "Tsuen Wan, New Territories, Hong Kong"},
+      "registered_address": {"value": "Room 506, 12 Kestrel Bay Road, Tsuen Wan, New Territories, Hong Kong", "doc": "01-registry-extract.txt", "quote": "Registered office: Room 506, 12 Kestrel Bay Road, Tsuen Wan, New Territories, Hong Kong"}
+    },
+    "director_mentions": [
+      {"name": "WONG Ka-ho", "doc": "01-registry-extract.txt", "quote": "WONG Ka-ho (appointed 2015-08-03)"},
+      {"name": "Mei TANAKA", "doc": "01-registry-extract.txt", "quote": "Mei TANAKA (appointed 2017-02-20)"},
+      {"name": "Ravi SHARMA", "doc": "01-registry-extract.txt", "quote": "Ravi SHARMA (appointed 2026-05-11)"}
+    ],
+    "ownership": [
+      {"owner": "WONG Ka-ho", "owner_type": "person", "owned": "Kestrel Bay Logistics Limited", "percent": 40, "doc": "01-registry-extract.txt", "quote": "WONG Ka-ho, 40%"},
+      {"owner": "Mei TANAKA", "owner_type": "person", "owned": "Kestrel Bay Logistics Limited", "percent": 30, "doc": "01-registry-extract.txt", "quote": "Mei TANAKA, 30%"},
+      {"owner": "Northgate Ventures Ltd", "owner_type": "company", "owned": "Kestrel Bay Logistics Limited", "percent": 30, "doc": "01-registry-extract.txt", "quote": "Northgate Ventures Ltd (British Virgin Islands), 30%"}
+    ],
+    "documents": [
+      {"file": "01-registry-extract.txt", "type": "registry_extract", "subject": "Kestrel Bay Logistics Limited", "date": "2026-10-28", "expiry": null},
+      {"file": "02-business-registration.txt", "type": "business_registration", "subject": "Kestrel Bay Logistics Limited", "date": "2026-08-03", "expiry": "2027-08-02"}
+    ]
+  }
+}

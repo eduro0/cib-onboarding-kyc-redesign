@@ -1,0 +1,86 @@
+# Implements: process-maps/to-be-map, process-maps/human-gates, process-maps/moments-of-truth, process-maps/one-source, process-maps/decline-path, process-maps/review-skips-asks
+# To-Be: the AI-first redesign. AI steps (type ai) read and draft; a person approves at every gate before
+# anything reaches the client, the risk rating or the file (steps marked effect). scripts/maps.py checks that
+# no path from an AI step reaches an effect without passing a gate. Same field meanings as as-is.yaml.
+# sticky: a gateway that describes the case (is it high risk? does it need the client?) is decided once per case,
+# so a rework loop that passes it again keeps the same answer.
+
+id: to_be
+title: "To-Be: AI-first onboarding and periodic review, with human approval gates"
+lanes:
+  - {id: client, name: "Corporate client"}
+  - {id: rm, name: "Relationship manager"}
+  - {id: ops, name: "Onboarding & KYC operations"}
+  - {id: compliance, name: "Financial crime compliance"}
+  - {id: ai, name: "AI assistant"}
+  - {id: systems, name: "Systems & rules"}
+
+steps:
+  - {id: start_new, type: start, lane: client, col: 0, label: "Client starts onboarding in the portal", case: onboarding}
+  - {id: start_review, type: timer, lane: systems, col: 0, label: "Review opened before due date, or a trigger event", case: review}
+  - {id: prefill, type: ai, lane: ai, col: 1, label: "Pre-fill from registries and the file; list only what is missing", touch: tobe.prefill.touch, wait: tobe.prefill.wait, fixes: [P1, P7]}
+  - {id: approve_request, type: task, gate: true, lane: ops, col: 2, label: "Approve the client request, or confirm none is needed", touch: tobe.approve_request.touch, wait: tobe.approve_request.wait, fixes: [P2]}
+  - {id: gw_ask, type: gateway, sticky: true, lane: ops, col: 3, label: "Anything to ask?"}
+  - {id: upload, type: client, effect: true, lane: client, col: 3, label: "Upload documents once in the portal", wait: tobe.upload.wait}
+  - {id: read_pack, type: ai, lane: ai, col: 4, label: "Read the pack: extract data and ownership, check it against the rules", touch: tobe.read_pack.touch, wait: tobe.read_pack.wait, fixes: [P3, P4]}
+  - {id: review_draft, type: task, gate: true, lane: ops, col: 5, label: "Review the AI draft and its flags", touch: tobe.review_draft.touch, wait: tobe.review_draft.wait}
+  - {id: gw_complete, type: gateway, lane: ops, col: 6, label: "Complete?"}
+  - {id: screen, type: system, lane: systems, col: 7, label: "Screen names: sanctions, PEP, adverse media", wait: tobe.screen.wait}
+  - {id: triage, type: ai, lane: ai, col: 8, label: "Triage hits and explain each match", touch: tobe.triage.touch, wait: tobe.triage.wait, fixes: [P5]}
+  - {id: decide_hits, type: task, gate: true, lane: ops, col: 9, label: "Decide each screening hit", touch: tobe.decide_hits.touch, wait: tobe.decide_hits.wait}
+  - {id: rate, type: system, lane: systems, col: 10, label: "Rules propose the risk rating", wait: tobe.rate.wait}
+  - {id: confirm_rating, type: task, gate: true, effect: true, lane: ops, col: 11, label: "Confirm and record the rating", touch: tobe.confirm_rating.touch, wait: tobe.confirm_rating.wait}
+  - {id: gw_risk, type: gateway, lane: ops, col: 12, label: "High risk or true match?", sticky: true}
+  - {id: edd_memo, type: ai, lane: ai, col: 13, label: "Draft the EDD memo with sources", touch: tobe.edd_memo.touch, wait: tobe.edd_memo.wait}
+  - {id: edd_approve, type: task, gate: true, lane: compliance, col: 14, label: "Review the memo and decide", touch: tobe.edd_approve.touch, wait: tobe.edd_approve.wait}
+  - {id: gw_edd, type: gateway, sticky: true, lane: compliance, col: 15, label: "Approved?"}
+  - {id: end_declined, type: end, lane: compliance, col: 16, label: "Declined or exited"}
+  - {id: preqc, type: ai, lane: ai, col: 17, label: "Pre-QC: run the file checks", touch: tobe.preqc.touch, wait: tobe.preqc.wait, fixes: [P6]}
+  - {id: qc_signoff, type: task, gate: true, lane: ops, col: 18, label: "QC sign-off", touch: tobe.qc_signoff.touch, wait: tobe.qc_signoff.wait}
+  - {id: gw_qc, type: gateway, lane: ops, col: 19, label: "QC passed?"}
+  - {id: fix_file, type: task, lane: rm, col: 19, label: "Fix the defects pre-QC and QC listed", touch: tobe.fix_file.touch, wait: tobe.fix_file.wait}
+  - {id: gw_type, type: gateway, lane: ops, col: 20, label: "Case type?"}
+  - {id: approve, type: task, lane: rm, col: 21, label: "Business signs off the relationship", touch: tobe.approve.touch, wait: tobe.approve.wait}
+  - {id: update_file, type: task, effect: true, lane: ops, col: 21, label: "Record the outcome, set the next review date", touch: tobe.update_file.touch, wait: tobe.update_file.wait}
+  - {id: end_current, type: end, lane: ops, col: 22, label: "File current"}
+  - {id: open_accounts, type: system, effect: true, lane: systems, col: 23, label: "Open accounts and set up access", wait: tobe.open_accounts.wait}
+  - {id: end_live, type: end, lane: client, col: 24, label: "Accounts live"}
+
+flows:
+  - [start_new, prefill]
+  - [start_review, prefill]
+  - [prefill, approve_request]
+  - [approve_request, gw_ask]
+  - {from: gw_ask, to: upload, label: "Yes", p: tobe.ask_client.p}
+  - {from: gw_ask, to: screen, label: "No: nothing missing", route: below}
+  - [upload, read_pack]
+  - [read_pack, review_draft]
+  - [review_draft, gw_complete]
+  - {from: gw_complete, to: approve_request, label: "No: one follow-up", p: tobe.pack_incomplete.p, route: below}
+  - {from: gw_complete, to: screen, label: "Yes"}
+  - [screen, triage]
+  - [triage, decide_hits]
+  - [decide_hits, rate]
+  - [rate, confirm_rating]
+  - [confirm_rating, gw_risk]
+  - {from: gw_risk, to: edd_memo, label: "Yes", p: high_risk.p}
+  - {from: gw_risk, to: preqc, label: "No"}
+  - [edd_memo, edd_approve]
+  - [edd_approve, gw_edd]
+  - {from: gw_edd, to: preqc, label: "Yes", route: turn-first}
+  - {from: gw_edd, to: end_declined, label: "No", p: edd_decline.p}
+  - [preqc, qc_signoff]
+  - [qc_signoff, gw_qc]
+  - {from: gw_qc, to: fix_file, label: "No", p: tobe.qc_fail.p}
+  - {from: fix_file, to: qc_signoff}
+  - {from: gw_qc, to: gw_type, label: "Yes"}
+  - {from: gw_type, to: approve, label: "New client", when: onboarding}
+  - {from: gw_type, to: update_file, label: "Review", when: review}
+  - [approve, open_accounts]
+  - [open_accounts, end_live]
+  - [update_file, end_current]
+
+moments_of_truth:
+  - {id: M1, step: upload, text: "First request: one tailored list, one upload"}
+  - {id: M2, step: upload, text: "Asked again: at most one follow-up, every item at once, and none on a review with nothing missing"}
+  - {id: M3, step: end_live, text: "Accounts live: days sooner, with fewer asks"}

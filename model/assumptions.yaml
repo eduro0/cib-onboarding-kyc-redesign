@@ -1,0 +1,89 @@
+# Implements: kpi-model/assumptions-visible, kpi-model/simulated-cases
+# Every input to the KPI simulation. All values are simulated inputs for an illustrative bank, not data from any
+# real bank. "basis" is a sources/ key, or (guess) for a judgment written down so it can be argued with.
+# touch = staff hours of hands-on work in the step; wait = elapsed calendar days the step takes, queue included.
+# p = the share of cases taking a gateway branch; a value per case type where they differ.
+# Spread: each case draws waits from a triangular distribution (0.5x, x, 2x) and touch from (0.75x, x, 1.5x).
+
+run:
+  seed: {value: 2026, unit: "-", basis: "(guess)", note: "fixed so the numbers can be remade exactly"}
+  onboarding_cases: {value: 300, unit: cases/year, basis: "(guess)", note: "new corporate clients at one branch"}
+  review_cases: {value: 700, unit: cases/year, basis: "(guess)", note: "periodic reviews falling due at one branch"}
+  review_lead_days: {value: 90, unit: days, basis: "(guess)", note: "a review is opened this many days before its due date; on time if it ends within them"}
+  fte_hours: {value: 1600, unit: hours/year, basis: "(guess)", note: "productive hours in one full-time year, to turn hours into FTE"}
+  wait_spread: {value: [0.5, 2.0], unit: "x of value", basis: "(guess)", note: "triangular min and max multipliers for waits"}
+  touch_spread: {value: [0.75, 1.5], unit: "x of value", basis: "(guess)", note: "triangular min and max multipliers for touch time"}
+
+shared:
+  high_risk.p: {value: 0.2, unit: share, basis: "(guess)", note: "cases rated high risk or with a true screening match, sent to EDD"}
+  edd_decline.p: {value: 0.1, unit: share, basis: "(guess)", note: "EDD cases declined or exited"}
+
+as_is:
+  asis.prep_review.touch: {value: 1.0, unit: hours, basis: "(guess)", note: "pulling the file and listing what is stale, by hand"}
+  asis.prep_review.wait: {value: 3, unit: days, basis: "(guess)"}
+  asis.request_docs.touch: {value: 1.5, unit: hours, basis: "(guess)"}
+  asis.request_docs.wait: {value: 2, unit: days, basis: "(guess)"}
+  asis.send_docs.wait: {value: 10, unit: days, basis: "(guess)", note: "client gathering documents against a generic list"}
+  asis.check_pack.touch: {value: 1.5, unit: hours, basis: "(guess)"}
+  asis.check_pack.wait: {value: 3, unit: days, basis: "(guess)", note: "mostly queue time"}
+  asis.pack_incomplete.p: {value: 0.5, unit: share, basis: "(guess)", note: "packs found incomplete at each check, so one chase per case on average"}
+  asis.chase.touch: {value: 1.0, unit: hours, basis: "(guess)"}
+  asis.chase.wait: {value: 2, unit: days, basis: "(guess)"}
+  asis.key_data.touch: {value: 2.0, unit: hours, basis: "(guess)", note: "re-keying into KYC and core systems"}
+  asis.key_data.wait: {value: 2, unit: days, basis: "(guess)"}
+  asis.ubo.touch: {value: 3.0, unit: hours, basis: "(guess)", note: "registry searches through each layer of ownership"}
+  asis.ubo.wait: {value: 3, unit: days, basis: "(guess)"}
+  asis.screen.wait: {value: 1, unit: days, basis: "(guess)"}
+  asis.clear_hits.touch: {value: 2.5, unit: hours, basis: "(guess)", note: "clearing mostly false-positive hits one by one"}
+  asis.clear_hits.wait: {value: 3, unit: days, basis: "(guess)"}
+  asis.rate.touch: {value: 0.5, unit: hours, basis: "(guess)"}
+  asis.rate.wait: {value: 1, unit: days, basis: "(guess)"}
+  asis.edd.touch: {value: 6.0, unit: hours, basis: "(guess)"}
+  asis.edd.wait: {value: 10, unit: days, basis: "(guess)", note: "compliance queue plus research"}
+  asis.qc.touch: {value: 1.5, unit: hours, basis: "(guess)"}
+  asis.qc.wait: {value: 4, unit: days, basis: "(guess)"}
+  asis.qc_fail.p: {value: 0.3, unit: share, basis: "(guess)", note: "files sent back by QC at each check"}
+  asis.fix_file.touch: {value: 2.0, unit: hours, basis: "(guess)"}
+  asis.fix_file.wait: {value: 5, unit: days, basis: "(guess)", note: "often needs the client again"}
+  asis.approve.touch: {value: 0.5, unit: hours, basis: "(guess)"}
+  asis.approve.wait: {value: 3, unit: days, basis: "(guess)"}
+  asis.open_accounts.wait: {value: 3, unit: days, basis: "(guess)"}
+  asis.update_file.touch: {value: 1.0, unit: hours, basis: "(guess)"}
+  asis.update_file.wait: {value: 1, unit: days, basis: "(guess)"}
+
+to_be:
+  tobe.prefill.touch: {value: 0.0, unit: hours, basis: "(guess)", note: "machine time; staff time is in the approval that follows"}
+  tobe.prefill.wait: {value: 0.2, unit: days, basis: "(guess)"}
+  tobe.approve_request.touch: {value: 0.75, unit: hours, basis: "(guess)", note: "analyst reviews and edits the drafted request"}
+  tobe.approve_request.wait: {value: 1, unit: days, basis: "(guess)"}
+  tobe.ask_client.p: {value: {onboarding: 1.0, review: 0.6}, unit: share, basis: "(guess)", note: "share of cases that need anything from the client; 40% of reviews need nothing"}
+  tobe.upload.wait: {value: 8, unit: days, basis: "(guess)", note: "client works from a tailored list, uploads once; still mostly the client's own time"}
+  tobe.read_pack.touch: {value: 0.0, unit: hours, basis: "(guess)"}
+  tobe.read_pack.wait: {value: 0.1, unit: days, basis: "(guess)"}
+  tobe.review_draft.touch: {value: 2.0, unit: hours, basis: "(guess)", note: "replaces check_pack, key_data and ubo (6.5 h in As-Is): the analyst checks a draft instead of building the file"}
+  tobe.review_draft.wait: {value: 2, unit: days, basis: "(guess)"}
+  tobe.pack_incomplete.p: {value: 0.3, unit: share, basis: "(guess)", note: "the tailored list leaves fewer gaps, but AI misses and client errors still send some back"}
+  tobe.screen.wait: {value: 1, unit: days, basis: "(guess)"}
+  tobe.triage.touch: {value: 0.0, unit: hours, basis: "(guess)"}
+  tobe.triage.wait: {value: 0.1, unit: days, basis: "(guess)"}
+  tobe.decide_hits.touch: {value: 1.5, unit: hours, basis: "(guess)", note: "deciding hits with the explanation in front of you"}
+  tobe.decide_hits.wait: {value: 2, unit: days, basis: "(guess)"}
+  tobe.rate.wait: {value: 0.0, unit: days, basis: "(guess)"}
+  tobe.confirm_rating.touch: {value: 0.5, unit: hours, basis: "(guess)"}
+  tobe.confirm_rating.wait: {value: 1, unit: days, basis: "(guess)"}
+  tobe.edd_memo.touch: {value: 0.0, unit: hours, basis: "(guess)"}
+  tobe.edd_memo.wait: {value: 0.5, unit: days, basis: "(guess)"}
+  tobe.edd_approve.touch: {value: 4.0, unit: hours, basis: "(guess)", note: "compliance reviews a drafted memo instead of writing one"}
+  tobe.edd_approve.wait: {value: 7, unit: days, basis: "(guess)"}
+  tobe.preqc.touch: {value: 0.0, unit: hours, basis: "(guess)"}
+  tobe.preqc.wait: {value: 0.1, unit: days, basis: "(guess)"}
+  tobe.qc_signoff.touch: {value: 1.0, unit: hours, basis: "(guess)"}
+  tobe.qc_signoff.wait: {value: 2, unit: days, basis: "(guess)"}
+  tobe.fix_file.touch: {value: 1.5, unit: hours, basis: "(guess)", note: "defects arrive listed by the pre-QC checks"}
+  tobe.fix_file.wait: {value: 3, unit: days, basis: "(guess)"}
+  tobe.qc_fail.p: {value: 0.15, unit: share, basis: "(guess)", note: "pre-QC catches defects before sign-off"}
+  tobe.approve.touch: {value: 0.5, unit: hours, basis: "(guess)"}
+  tobe.approve.wait: {value: 3, unit: days, basis: "(guess)"}
+  tobe.open_accounts.wait: {value: 3, unit: days, basis: "(guess)", note: "unchanged: the redesign does not touch account set-up"}
+  tobe.update_file.touch: {value: 0.5, unit: hours, basis: "(guess)"}
+  tobe.update_file.wait: {value: 1, unit: days, basis: "(guess)"}

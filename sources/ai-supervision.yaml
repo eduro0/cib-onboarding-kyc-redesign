@@ -1,0 +1,242 @@
+# Public sources: ai supervision. Researched 2026-11-18; every quote checked against the downloaded page or PDF.
+- key: hkma-ai-high-level-principles-2019
+  title: High-level Principles on Artificial Intelligence
+  publisher: HKMA
+  url: https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20191101-1-EN/20191101-1-EN.pdf
+  date_published: '2019-11-01'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: The board and senior management of banks should appreciate that they remain accountable for all AI-driven
+      decisions.
+    locator: Principle 1
+    supports: Accountability for AI decisions stays with the bank's board and senior management.
+  - text: Trustworthy and robust AI applications should be explainable (i.e. no black-box excuse) to all relevant
+      parties.
+    locator: Principle 3
+    supports: An AI assistant's outputs, such as risk flags, must be explainable.
+  - text: appropriate risk-mitigating controls (e.g. human-in-the-loop mechanism, prudent risk limits and sample
+      quality assurance check)
+    locator: Principle 12
+    supports: Human-in-the-loop and sample QA are HKMA-named controls for AI.
+  caveats: Press coverage (not verified) says the Oct 2026 Supervisory Guidance replaces these principles; see hkma-art-framework-2026.
+- key: hkma-genai-consumer-protection-2024
+  title: Consumer Protection in respect of Use of Generative Artificial Intelligence
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/media/eng/doc/key-information/guidelines-and-circular/2024/20240819e1.pdf
+  date_published: '2024-08-19'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: The board and senior management of authorized institutions should remain accountable for all the GenAI-driven
+      decisions and processes
+    locator: Section 1, Governance and accountability
+    supports: Accountability rule extended explicitly to GenAI.
+  - text: authorized institutions should adopt the “human-in-the-loop” approach, i.e. having human to retain control
+      in the decision-making process to ensure the model-generated outputs are accurate and not misleading.
+    locator: Section 1(c)
+    supports: In the early stage of customer-facing GenAI, the HKMA expects a human to keep control of decisions.
+  - text: customers are provided with the option to opt out of using GenAI and request human intervention on GenAI-generated
+      decision at their discretion as far as practicable.
+    locator: Section 2(b), Fairness
+    supports: Client-facing GenAI should offer an opt-out or a route to human review.
+  caveats: Scope is customer-facing GenAI. Internal analyst assistants fall under risk-management principles rather
+    than this circular. The HKMA URL redirects to a BRDR copy (served as 20241107-1-EN).
+- key: hkma-ai-suspicious-activity-monitoring-2024
+  title: Use of Artificial Intelligence for Monitoring of Suspicious Activities
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/media/eng/doc/key-information/guidelines-and-circular/2024/20240909e1.pdf
+  date_published: '2024-09-09'
+  date_accessed: 2026-11-18
+  kind: circular
+  quotes:
+  - text: These enhanced systems have proved to be more effective and efficient than conventional rules-based transaction
+      monitoring systems commonly used by AIs.
+    locator: p.1
+    supports: The HKMA has publicly endorsed AI over rules-based monitoring for AML.
+  - text: AIs with significant operations in Hong Kong should give due consideration to adopting artificial intelligence
+      in their ML/TF monitoring systems to enable them to stay effective and efficient.
+    locator: p.2
+    supports: HKMA actively expects larger banks to consider AI for AML monitoring.
+  caveats: About transaction monitoring, not onboarding or KYC review; it is supporting context for AI in AML. Feasibility
+    studies were due by end March 2025.
+- key: hkma-genai-sandbox-cohort1-2024
+  title: HKMA announces inaugural cohort of GenA.I. Sandbox
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2024/12/20241219-5/
+  date_published: '2024-12-19'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: press release with annex
+  quotes:
+  - text: A total of 15 use cases, from 10 banks and four technology partners (see Annex ), have been selected as
+      the inaugural participants in the GenA.I. Sandbox from over 40 proposals received.
+    locator: para 1
+    supports: Size of the first GenAI Sandbox cohort.
+  - text: The proposed use cases mainly revolve around enhancing risk management, anti-fraud measures and customer
+      experience.
+    locator: para 2
+    supports: The sandbox themes cover risk management, which includes KYC.
+  - text: Enhanced Know Your Customer (KYC) with unstructured data
+    locator: Annex, Risk Management examples, https://www.hkma.gov.hk/media/eng/doc/key-information/press-release/2024/20241219e5a1.pdf
+    supports: A KYC use case on unstructured data was in the first HKMA GenAI Sandbox cohort.
+  - text: Protection against fraudulent account openings
+    locator: Annex, Anti-Fraud examples
+    supports: Account-opening fraud was also a sandbox use case.
+  caveats: Sandbox launch circular dated 20 Sep 2024 (seen in search, not fetched). The annex lists examples only,
+    with no results.
+- key: hkma-genai-sandbox-cohort2-2025
+  title: HKMA announces second cohort of GenA.I. Sandbox to advance responsible A.I. innovation
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/10/20251015-4/
+  date_published: '2025-10-15'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: press release
+  quotes:
+  - text: From over 60 proposals, a total of 27 use cases from 20 banks and 14 technology partners have been selected
+    locator: para 1
+    supports: Bank interest in the sandbox grew from the first cohort to the second.
+  - text: use cases pioneering “A.I. vs. A.I.” strategies, such as leveraging A.I. to conduct automated quality
+      checks on A.I.-generated outputs
+    locator: para 2
+    supports: Using AI to quality-check AI output is an HKMA-recognised control pattern for an assistant prototype.
+  caveats: The annex (20251015e4a1.pdf) lists credit, trade finance, fraud and service use cases, but no explicit
+    KYC one.
+- key: hkma-genai-sandbox-plusplus-2026
+  title: Regulators launch GenA.I. Sandbox++ to foster A.I. innovation across financial services
+  publisher: HKMA (jointly with SFC, IA, MPFA and Cyberport)
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/03/20260305-3/
+  date_published: '2026-03-05'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: press release
+  quotes:
+  - text: The initiative maintains its focus on three high-impact areas — risk management, anti-fraud, and customer
+      experience
+    locator: para 2
+    supports: Sandbox++ keeps the same three themes.
+  - text: The launch of the GenA.I. Sandbox++ marks a significant milestone under our ‘Fintech 2030’ strategy
+    locator: Eddie Yue quote
+    supports: Links the AI sandbox to the HKMA Fintech 2030 strategy.
+  caveats: No primary Fintech 2030 document was fetched; Fintech 2030 is cited only as referenced here.
+- key: hkma-genai-sandbox-plusplus-cohort1-2026
+  title: First cohort of GenA.I. Sandbox++
+  publisher: HKMA (jointly with SFC, IA, MPFA and Cyberport)
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/08/20260827-3/
+  date_published: '2026-08-27'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: press release with annex
+  quotes:
+  - text: From nearly 100 proposals received, 36 use cases have been selected for the first cohort of the GenA.I.
+      Sandbox++, involving 30 financial institutions and 27 technology partners
+    locator: para 1
+    supports: The latest cohort size.
+  - text: This cohort will focus on agentic A.I. applications.
+    locator: para 2
+    supports: Regulators' attention has moved to agentic AI.
+  - text: The testing will cover end-to-end processes such as customer onboarding, payments, insurance claims and
+      customer interactions.
+    locator: para 2
+    supports: Customer onboarding is named as an end-to-end process under regulator-supervised AI testing in HK
+      in 2026.
+  - text: A.I.-enhanced due diligence verification
+    locator: Annex, Risk Management examples, https://www.hkma.gov.hk/media/eng/doc/key-information/press-release/2026/20260827e3a1.pdf
+    supports: An AI due-diligence verification use case is in the current sandbox cohort.
+  caveats: Use-case titles only; participants and outcomes are not linked to specific use cases.
+- key: hkma-art-framework-2026
+  title: HKMA announces “ART” Framework to promote responsible A.I. adoption
+  publisher: HKMA
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/10/20261015-3/
+  date_published: '2026-10-15'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: press release
+  quotes:
+  - text: Issued the latest Supervisory Guidance for Responsible Adoption of Artificial Intelligence, drawing on
+      insights from the second cohort of the Generative A.I. (GenA.I.) Sandbox
+    locator: Key initiatives, bullet 1
+    supports: The HKMA issued new AI supervisory guidance in October 2026.
+  - text: exploring intent-anchored accountability, a registry of material A.I. agents, and effective intervention
+      mechanisms.
+    locator: Key initiatives, bullet 3 (upcoming discussion paper on agentic A.I. governance)
+    supports: Expected future controls for agentic AI include an agent registry and intervention mechanisms.
+  - text: Notably, more than 60% of the use cases explored agentic A.I.
+    locator: para 3 (second cohort of GenA.I. Sandbox)
+    supports: Most second-cohort sandbox use cases were agentic.
+  caveats: The Supervisory Guidance document itself was NOT FETCHED (not located). Press coverage says it replaces
+    the 2019 High-level Principles; unverified.
+- key: hkma-speech-finance-ai-forum-2026
+  title: Opening Remarks at Finance + A.I. Forum
+  publisher: HKMA (Carmen Chu, Executive Director (Banking Supervision))
+  url: https://www.hkma.gov.hk/eng/news-and-media/speeches/2026/10/20261016-1/
+  date_published: '2026-10-16'
+  date_accessed: 2026-11-18
+  kind: guidance
+  doc_type: speech
+  quotes:
+  - text: the guidance calls for clear ownership of each A.I. use case, supported by an up-to-date inventory of
+      approved applications.
+    locator: Section on ART Framework
+    supports: The 2026 HKMA guidance expects a named owner and an inventory entry for each AI use case.
+  - text: It also recognises a progressive shift from “human-in-the-loop” to “human-on-the-loop” oversight.
+    locator: Section on ART Framework
+    supports: The HKMA now accepts that oversight can move from approving each step to supervising, as risk allows.
+  - text: effective oversight need not mean human involvement in every step. But it must mean clear accountability
+      and on-going monitoring.
+    locator: Section on ART Framework
+    supports: The prototype can automate low-risk steps if accountability and monitoring are clear.
+  caveats: A speech describing the guidance, not the guidance text. Press reports attributing these points to Arthur
+    Yuen are wrong; the speaker is Carmen Chu.
+- key: hkimr-ai-adoption-report-2026
+  title: 'Report on “From Assistance to Autonomy: A.I. Adoption, Governance, and Compliance in Hong Kong’s Financial
+    Services Industry”'
+  publisher: Hong Kong Institute for Monetary and Financial Research (HKIMR), Hong Kong Academy of Finance
+  url: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261117-3/
+  date_published: '2026-11-17'
+  date_accessed: 2026-11-18
+  kind: survey
+  doc_type: press release on research report (full report https://aof.org.hk/docs/default-source/hkimr/applied-research-report/agairep.pdf,
+    not fetched)
+  quotes:
+  - text: with current or planned adoption reaching 90%, up from 75% in 2025.
+    locator: para 2 (GenA.I. adoption)
+    supports: 90% of surveyed HK financial institutions have adopted or plan to adopt GenAI.
+  - text: agentic A.I. adoption is growing, with 13% of financial institutions having already implemented and 56%
+      planning to implement the technology.
+    locator: para 2
+    supports: 'Agentic AI is still early in HK: 13% implemented.'
+  - text: Within the regulatory compliance space, 86% of the surveyed financial institutions have adopted or plan
+      to adopt GenA.I. solutions
+    locator: para 3
+    supports: Compliance is a main GenAI area for HK financial institutions.
+  caveats: Survey and interviews Jan-Jul 2026; sample size not stated in the press release. Covers all financial
+    institutions, not only banks.
+- key: mas-ai-risk-management-guidelines-2026
+  title: Guidelines on Artificial Intelligence Risk Management
+  publisher: MAS
+  url: https://www.mas.gov.sg/-/media/mas-media-library/regulation/guidelines/bd/guidelines-on-artificial-intelligence-risk-management-for-financial-institutions/guidelines-on-artificial-intelligence-risk-management.pdf
+  date_published: '2026-10-07'
+  date_accessed: 2026-11-18
+  kind: guidance
+  quotes:
+  - text: An FI should put in place and regularly review controls to ensure appropriate human oversight over an
+      AI use case, system or model across its life cycle.
+    locator: para 5.9
+    supports: Singapore requires human oversight over AI across its life cycle.
+  - text: The need for and degree of human oversight should take into account the objective of using AI, and be
+      proportionate to the risk materiality of the AI use case.
+    locator: para 5.9
+    supports: Oversight is proportionate to risk, matching the HKMA's human-on-the-loop direction.
+  - text: mechanisms to escalate AI outputs or recommendations for human review where pre-defined conditions (e.g.,
+      on reliability and accuracy) are met.
+    locator: para 5.9(c) Design
+    supports: Designed-in escalation to a human reviewer is an explicit MAS expectation.
+  - text: existing principles on Fairness, Ethics, Accountability and Transparency (FEAT) continue to apply for
+      guiding the use of AI in the financial sector.
+    locator: para 1.2
+    supports: The 2018 FEAT principles still apply alongside the 2026 guidelines.
+  caveats: 'Media release: https://www.mas.gov.sg/news/media-releases/2026/mas-sets-out-supervisory-expectations-on-responsible-ai-adoption-by-financial-institutions
+    (states they apply to all FIs and all forms of AI). FEAT document itself not fetched. Transition period not
+    checked.'
